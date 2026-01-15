@@ -18,6 +18,8 @@ import com.formdev.flatlaf.*;
 import javax.swing.filechooser.*;
 import com.formdev.flatlaf.themes.*;
 
+import java.util.List;
+
 import static java.lang.System.*;
 import static javax.swing.JOptionPane.*;
 import static javax.swing.JFileChooser.*;
@@ -53,9 +55,9 @@ private ByteBuffer buffer;                        // буфер для зчит�
 private final File homeDir = FileSystemView.getFileSystemView()
                                            .getHomeDirectory();
 
-// Фільтр для файлів із розширенням *.test
-private final FileNameExtensionFilter extTest =
-          new FileNameExtensionFilter("Особливий тип файлу", "test");
+// Фільтр для файлів із розширенням *.csv
+private final FileNameExtensionFilter extCsv =
+          new FileNameExtensionFilter("Файли локалізації", "csv");
 
 // Фільтр для файлів із розширенням *.fnt
 private final FileNameExtensionFilter extFnt =
@@ -63,6 +65,7 @@ private final FileNameExtensionFilter extFnt =
 
 private SearchDialog searchDialog;         // діалогове вікно пошуку інформації
 
+public static int editableColumn = 1;   // номер стовбця, який можна редагувати
 public static boolean debug = true;  // якщо true - увімк. режим налагоджування
 
 // ============================================================================
@@ -73,11 +76,11 @@ public TToolCTW() {
 initComponents();
 
 fileOpen = new JFileChooser();
-fileOpen.setFileSelectionMode(FILES_AND_DIRECTORIES);
-//fileOpen.removeChoosableFileFilter(fileOpen.getChoosableFileFilters()[0]);
-fileOpen.addChoosableFileFilter(extTest);
+fileOpen.setFileSelectionMode(FILES_ONLY);
+fileOpen.removeChoosableFileFilter(fileOpen.getChoosableFileFilters()[0]);
+fileOpen.addChoosableFileFilter(extCsv);
 fileOpen.setCurrentDirectory(homeDir);
-//fileOpen.setSelectedFile(new File("..."));
+fileOpen.setSelectedFile(new File("/home/rutar/Desktop/lang/strings.csv"));
 
 fntDecompile = new JFileChooser();
 fntDecompile.setFileSelectionMode(FILES_ONLY);
@@ -98,7 +101,7 @@ public static void main (String args[]) {
         args[0].equals("--debug")) { debug = true; }
     
     Map<String, String> defaults = new HashMap<>();
-    defaults.put("@accentColor", "#555555");
+    defaults.put("@accentColor", "#767676");
     FlatLaf.setGlobalExtraDefaults(defaults);
 
     UIManager.put("MenuItem.minimumIconSize", new Dimension(0, 0));
@@ -119,39 +122,63 @@ public static void main (String args[]) {
 
 private void showOpenDialog() {
 
+// Дані змінилися - запитуємо чи відкривати новий файл
+if (dataWasChanged) { 
+
+String saveDataQuestion = """
+    У відкритому файлі присутні зміни. При відкриванні
+    нового файлу вони будуть втрачені. Бажаєте продовжити?
+    """;
+
+int answer = showConfirmDialog(this, saveDataQuestion,
+                              "Повідомлення", YES_NO_OPTION);
+
+if (answer != YES_OPTION) { return; }
+
+}
+
+// ............................................................................
+
 int result = fileOpen.showOpenDialog(this);
 if (result != JFileChooser.APPROVE_OPTION) { return; }
 
-openTestFile();
+openCsvFile();
 
 }
 
 // ============================================================================
-/// Відкривання *.test файлів
+/// Відкривання *.csv файлів
 
-private void openTestFile() {
+private void openCsvFile() {
 
-prepareNewTable();
+List<String> allStrings = null;
+inputFile = fileOpen.getSelectedFile();
+
+try { allStrings = Files.readAllLines(inputFile.toPath()); }
+catch (IOException _) { showMessageDialog(this, "Не вдалося прочитати файл",
+                                                "Помилка", 0); }
+
+prepareNewTable(allStrings.getFirst().split(";"));
 
 // ............................................................................
 
-try {
-
+String[] values;
 ArrayList<String> newRow = new ArrayList<>();
+int columns = allStrings.getFirst().split(";").length;
 
-for (int z = 1; z <= 9; z++) {
+for (int z = 1; z < allStrings.size(); z++) {
+    
+    values = allStrings.get(z).split(";");
     
     newRow.clear();
     newRow.add(String.valueOf(z));
-    newRow.add("Key_"   + z);
-    newRow.add("Value_" + z);
+    
+    for (String value : values)
+        { newRow.add(values.length == 0 ? "" : value); }
+    
     tableModel.addRow(newRow.toArray(String[]::new));
 
 }
-}
-
-catch (Exception ex) { showMessageDialog(this, "Помилка читання файлу: " +
-                                                ex.getMessage()); }
 
 // ............................................................................
     
@@ -321,22 +348,23 @@ private void showCompileRawDialog() {}
 // ============================================================================
 /// Попередня ініціалізація нової таблиці
 
-private void prepareNewTable() {
+private void prepareNewTable (String[] columns) {
 
 dataWasChanged = false;
 inputFile = fileOpen.getSelectedFile();
 sp_table.getVerticalScrollBar().setValue(0);
+editableColumn = columns[0].equals("key") ? 2 : 1;
 
 tableModel = new DefaultTableModel() {
     @Override
-    public boolean isCellEditable (int row, int column) { return column >= 2; }
+    public boolean isCellEditable (int row, int column)
+        { return column == editableColumn; }
 };
 
 tbl_main.setModel(tableModel);
 
 tableModel.addColumn("№");
-tableModel.addColumn("Ключ");
-tableModel.addColumn("Значення");
+for (String colimn : columns) { tableModel.addColumn(colimn); }
 
 }
 

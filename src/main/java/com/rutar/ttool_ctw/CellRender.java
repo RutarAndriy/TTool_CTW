@@ -4,6 +4,8 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.*;
 
+import static com.rutar.ttool_ctw.TToolCTW.*;
+
 // ............................................................................
 /// Реалізація зміненої промальовки клітинок таблиці
 /// @author Rutar_Andriy
@@ -24,7 +26,7 @@ Component component = super.getTableCellRendererComponent(table, value,
                                                           isSelected, hasFocus,
                                                           row, column);
 
-if (column != 2) { component.setForeground(Color.GRAY); }
+if (column != editableColumn) { component.setForeground(Color.GRAY); }
 
 return component;
 
