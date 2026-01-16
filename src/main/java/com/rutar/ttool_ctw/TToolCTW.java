@@ -7,10 +7,8 @@ import java.nio.*;
 import java.util.*;
 import javax.swing.*;
 import java.nio.file.*;
-import javax.imageio.*;
 import java.util.jar.*;
 import java.awt.event.*;
-import java.awt.image.*;
 import java.nio.charset.*;
 import javax.swing.event.*;
 import javax.swing.table.*;
@@ -20,10 +18,8 @@ import com.formdev.flatlaf.themes.*;
 
 import java.util.List;
 
-import static java.lang.System.*;
 import static javax.swing.JOptionPane.*;
 import static javax.swing.JFileChooser.*;
-import static java.awt.image.BufferedImage.*;
 import static java.nio.charset.StandardCharsets.*;
 
 // ............................................................................
@@ -60,9 +56,13 @@ private final File homeDir = FileSystemView.getFileSystemView()
 private final FileNameExtensionFilter extCsv =
           new FileNameExtensionFilter("Файли локалізації", "csv");
 
+// Фільтр для файлів із розширенням *.txt
+private final FileNameExtensionFilter extTxt =
+          new FileNameExtensionFilter("Файли локалізації", "txt");
+
 // Фільтр для файлів із розширенням *.fnt
 private final FileNameExtensionFilter extFnt =
-          new FileNameExtensionFilter("Особливі файли шрифтів", "fnt");
+          new FileNameExtensionFilter("Файли шрифтів", "fnt");
 
 private SearchDialog searchDialog;         // діалогове вікно пошуку інформації
 
@@ -78,14 +78,16 @@ initComponents();
 
 fileOpen = new JFileChooser();
 fileOpen.setFileSelectionMode(FILES_ONLY);
-fileOpen.removeChoosableFileFilter(fileOpen.getChoosableFileFilters()[0]);
+fileOpen.removeChoosableFileFilter(fileOpen
+        .getChoosableFileFilters()[0]);
 fileOpen.addChoosableFileFilter(extCsv);
 fileOpen.setCurrentDirectory(homeDir);
 //fileOpen.setSelectedFile(new File("..."));
 
 fntDecompile = new JFileChooser();
 fntDecompile.setFileSelectionMode(FILES_ONLY);
-//fileOpen.removeChoosableFileFilter(fileOpen.getChoosableFileFilters()[0]);
+fntDecompile.removeChoosableFileFilter(fntDecompile
+            .getChoosableFileFilters()[0]);
 fntDecompile.addChoosableFileFilter(extFnt);
 fntDecompile.setCurrentDirectory(homeDir);
 //fntDecompile.setSelectedFile(new File("..."));
@@ -339,39 +341,12 @@ if (result != JFileChooser.APPROVE_OPTION) { return; }
 
 inputFile = fntDecompile.getSelectedFile();
 
-try { allBytes = Files.readAllBytes(inputFile.toPath()); }
+int resultCode = new FontProcessor().decompileFont(inputFile);
 
-catch (IOException e) { out.println("Помилка розпаковування шрифту: "
-                                   + e.getMessage());
-                        return; }
-
-// ............................................................................
-
-byte[] data;
-buffer = ByteBuffer.wrap(allBytes);
-buffer.order(ByteOrder.LITTLE_ENDIAN);
-
-// ...
-if (debug) { out.println("..."); }
-
-int color;
-int width = 25;
-int height = 25;
-File imgFile = new File(homeDir.getPath() + "/imgTest.bmp");
-BufferedImage image = new BufferedImage(width, height, TYPE_3BYTE_BGR);
-
-for (int r = 0; r < height; r++) {
-for (int c = 0; c < width; c++) {
-    color = 0x0000FF;
-    image.setRGB(c, r, color);
-}
-}
-
-try { ImageIO.write(image, "bmp", imgFile);
-      if (debug) { out.println("File imgTest.bmp was written"); } }
-
-catch (IOException e)
-    { if (debug) { err.println("File imgTest.bmp error"); } }
+if (resultCode == 0)
+    { showMessageDialog(this, "Шрифт успішно розібрано", "Повідомлення", 1); }
+else
+    { showMessageDialog(this, "Сталася критична помилка!", "Помилка", 0); }
 
 }
 

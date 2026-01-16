@@ -1,10 +1,6 @@
 package com.rutar.ttool_ctw;
 
-import java.io.*;
 import java.nio.charset.*;
-import org.apache.commons.compress.compressors.deflate.*;
-
-import static java.lang.System.*;
 
 // ............................................................................
 /// Корисні допоміжні методи
@@ -179,47 +175,6 @@ public static char fromStringToChar (String s) {
     
     if (s.length() == 1) { return s.charAt(0); }
     else { return fromCodeToCP1251Char(Integer.parseInt(s)); }  
-}
-
-// ============================================================================
-/// Розпакування даних, запакованих з допомогою алгоритму zlib (deflate)
-/// @param compressed дані, запаковані з допомогою алгоритму zlib (deflate)
-/// @return розпаковані дані
-
-public static byte[] zlibDecompress (byte[] compressed) {
-
-try (ByteArrayInputStream bais = new ByteArrayInputStream(compressed);
-     DeflateCompressorInputStream dis = new DeflateCompressorInputStream(bais);
-     ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
-
-    int n;
-    byte[] byteBuffer = new byte[8192];
-    
-    while ((n = dis.read(byteBuffer)) != -1) { baos.write(byteBuffer, 0, n); }
-    
-    return baos.toByteArray();
-}
-
-catch (Exception e) { err.println("zlib decompress error");
-                      return null; }
-}
-
-// ============================================================================
-/// Запакування даних з допомогою алгоритму zlib (deflate)
-/// @param decompressed незапаковані дані
-/// @return запаковані дані
-
-public static byte[] zlibCompress (byte[] decompressed) {
-
-    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-    try (DeflateCompressorOutputStream dos =
-     new DeflateCompressorOutputStream(baos)) { dos.write(decompressed); }
-
-    catch (Exception e) { err.println("zlib compress error");
-                          return null; }
-
-    return baos.toByteArray();
 }
 
 // Кінець класу Utils =========================================================
