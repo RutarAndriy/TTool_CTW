@@ -24,6 +24,7 @@ import static java.lang.System.*;
 import static javax.swing.JOptionPane.*;
 import static javax.swing.JFileChooser.*;
 import static java.awt.image.BufferedImage.*;
+import static java.nio.charset.StandardCharsets.*;
 
 // ............................................................................
 /// Головний клас програми
@@ -33,7 +34,7 @@ import static java.awt.image.BufferedImage.*;
 public class TToolCTW extends JFrame {
 
 private File inputFile;                                         // вхідний файл
-// private File outputFile;                                    // вихідний файл
+private File outputFile;                                       // вихідний файл
 
 private final JFileChooser fileOpen;           // відкривання/збереження файлів
 // private final JFileChooser fntCompile;               // компілювання шрифтів
@@ -80,7 +81,7 @@ fileOpen.setFileSelectionMode(FILES_ONLY);
 fileOpen.removeChoosableFileFilter(fileOpen.getChoosableFileFilters()[0]);
 fileOpen.addChoosableFileFilter(extCsv);
 fileOpen.setCurrentDirectory(homeDir);
-fileOpen.setSelectedFile(new File("/home/rutar/Desktop/lang/strings.csv"));
+//fileOpen.setSelectedFile(new File("..."));
 
 fntDecompile = new JFileChooser();
 fntDecompile.setFileSelectionMode(FILES_ONLY);
@@ -154,7 +155,7 @@ private void openCsvFile() {
 List<String> allStrings = null;
 inputFile = fileOpen.getSelectedFile();
 
-try { allStrings = Files.readAllLines(inputFile.toPath()); }
+try { allStrings = Files.readAllLines(inputFile.toPath(), UTF_8); }
 catch (IOException _) { showMessageDialog(this, "Не вдалося прочитати файл",
                                                 "Помилка", 0); }
 
@@ -195,14 +196,58 @@ fileOpen.setSelectedFile(inputFile);
 int result = fileOpen.showSaveDialog(this);
 if (result != JFileChooser.APPROVE_OPTION) { return; }
 
-saveTestFile();
+saveCsvFile();
 
 }
 
 // ============================================================================
-/// Збереження *.test файлів
+/// Збереження *.csv файлів
 
-private void saveTestFile() {
+private void saveCsvFile() {
+
+outputFile = fileOpen.getSelectedFile();
+
+String line, value;
+int rowCount = tbl_main.getRowCount();
+int colCount = tbl_main.getColumnCount();
+ArrayList<String> result = new ArrayList<>();
+
+// ............................................................................
+// Записуємо назви стовбців таблиці
+
+line = "";
+for (int z = 1; z < colCount; z++)
+    { line += (String) tbl_main.getColumnModel().getColumn(z).getHeaderValue();
+      line += (z < colCount - 1) ? ";" : ""; }
+
+result.add(line);
+
+// ............................................................................
+// Записуємо значення рядків таблиці
+
+for (int r = 0; r < rowCount; r++) {
+    
+    line = "";
+    for (int c = 1; c < colCount; c++)
+        { value = (String) tbl_main.getValueAt(r, c);
+          line += value == null ? "" : value;
+          line += (c < colCount - 1) ? ";" : ""; }
+    
+    result.add(line);
+}
+
+try {
+
+dataWasChanged = false;
+Files.write(outputFile.toPath(), result, UTF_8);
+
+JOptionPane.showMessageDialog(this, "Файл " + outputFile.getName()
+                          + " успішно збережено", "Повідомлення", 1);
+
+}
+
+catch (Exception _) { showMessageDialog(this, "При збереженні файлу відбулася "
+                                     + "критична помилка", "Помилка", 0); }
 
 }
 
@@ -449,7 +494,7 @@ lbl_colCount.setText(tmp);
         mni_about = new JMenuItem();
 
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("TTool_CTW");
+        setTitle("BS Translation Tool");
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent evt) {
                 onWindowClose(evt);
@@ -495,7 +540,6 @@ lbl_colCount.setText(tmp);
         mni_save.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
         mni_save.setText("Зберегти");
         mni_save.setActionCommand("save");
-        mni_save.setEnabled(false);
         mni_save.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 onMenuClick(evt);
@@ -659,8 +703,8 @@ lbl_colCount.setText(tmp);
     private JMenuItem mni_save;
     private JPanel pnl_footer;
     private JPopupMenu.Separator sep_one;
-    private JPopupMenu.Separator sep_two;
     private JPopupMenu.Separator sep_three;
+    private JPopupMenu.Separator sep_two;
     private JScrollPane sp_table;
     public JTable tbl_main;
     // End of variables declaration//GEN-END:variables
