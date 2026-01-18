@@ -469,7 +469,7 @@ lbl_colCount.setText(tmp);
         mni_about = new JMenuItem();
 
         setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("BS Translation Tool");
+        setTitle("TTool_CTW");
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent evt) {
                 onWindowClose(evt);
