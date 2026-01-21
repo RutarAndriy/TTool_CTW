@@ -191,6 +191,24 @@ finalizeNewTable();
 
 private void showSaveDialog() {
 
+// Перевіряємо чи немає у таблиці символу ";"
+for (int r = 0; r < tbl_main.getRowCount();    r++) {
+for (int c = 1; c < tbl_main.getColumnCount(); c++) {
+    Object valueAt = tbl_main.getValueAt(r, c);
+    if (valueAt != null && valueAt.toString().contains(";"))
+        { tbl_main.setRowSelectionInterval(r, r);
+          tbl_main.setColumnSelectionInterval(c, c);
+          
+          Rectangle rect = tbl_main.getCellRect(r, c, true);
+          tbl_main.scrollRectToVisible(rect);
+          tbl_main.changeSelection(r, c, false, false); 
+          
+          showMessageDialog(this, "У тексті не можна використовувати \";\"",
+                                  "Повідомлення", 1);
+          return; } } }
+
+// ............................................................................
+
 fileOpen.setSelectedFile(inputFile);
 int result = fileOpen.showSaveDialog(this);
 if (result != JFileChooser.APPROVE_OPTION) { return; }
