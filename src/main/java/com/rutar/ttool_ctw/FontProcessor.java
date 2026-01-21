@@ -1,16 +1,18 @@
 package com.rutar.ttool_ctw;
 
 import java.io.*;
+import java.awt.*;
 import java.util.*;
 import org.jsoup.*;
 import java.nio.file.*;
 import javax.imageio.*;
 import java.awt.image.*;
 import org.jsoup.nodes.*;
-import org.jsoup.select.*;
+
+import java.util.List;
 
 import static java.io.File.*;
-import static java.lang.System.*;
+import static java.awt.image.BufferedImage.*;
 import static java.nio.charset.StandardCharsets.*;
 
 // ............................................................................
@@ -21,157 +23,181 @@ import static java.nio.charset.StandardCharsets.*;
 public class FontProcessor {
 
 private final ArrayList<Symbol> symbols = new ArrayList<>();
+private final String charPattern = "code=\"%s\" x=\"%s\" y=\"%s\" "
+                                 + "w=\"%s\" h=\"%s\" dx=\"%s\" dy=\"%s\" "
+                                 + "advx=\"%s\"";
 
 // ============================================================================
+/// Розбирання *.fnt файлів на окремі символи
+/// @param inputFile вхідний *.fnt файл
+/// @return результат виконання операції: 0 - успіх, -1 - помилка
 
 public int decompileFont (File inputFile) {
 
-String imageName = inputFile.getName();
-imageName = imageName.substring(0, imageName.lastIndexOf("."));
+String imgName = inputFile.getName();
+imgName = imgName.substring(0, imgName.lastIndexOf("."));
 
-File outputDir = new File(inputFile.getParent() + separator + imageName);
+File outputDir = new File(inputFile.getParent() + separator + imgName);
 outputDir.mkdir();
 
-imageName += ".png";
-BufferedImage imFont, imSymbol;
-File imageFile = new File(inputFile.getParent() + separator + imageName);
+imgName += ".png";
+BufferedImage imFont, imgSymbol;
+ArrayList<String> outDesc = new ArrayList<>();
+File imgFile = new File(inputFile.getParent() + separator + imgName);
 
 // ............................................................................
 
 try {
 
-imFont = ImageIO.read(imageFile);
-Document doc = Jsoup.parse(inputFile);
-
-Element fontTag = doc.getElementsByTag("font").first();
-Attributes attributes = fontTag.attributes();
-
-File desc = new File(outputDir.getPath() + separator + "desc.txt");
-Files.writeString(desc.toPath(), attributes.html(), UTF_8);
-
 Symbol symbol;
-Elements chars = doc.getElementsByTag("char");
+imFont = ImageIO.read(imgFile);
+List<String> inDesc = Files.readAllLines(inputFile.toPath(), UTF_8);
 
 // ............................................................................
 
-for (Element el : chars.asList()) {
+for (String line : inDesc) {
     
-    symbol = new Symbol(symbols.size() + 1,
-                        el.attr("c"),  el.attr("code"),
-                        el.attr("x"),  el.attr("y"),
-                        el.attr("w"),  el.attr("h"),
-                        el.attr("dx"), el.attr("dy"), el.attr("advx"));
-
-    imSymbol = imFont.getSubimage(Integer.parseInt(symbol.getX()),
-                                  Integer.parseInt(symbol.getY()),
-                                  Integer.parseInt(symbol.getW()),
-                                  Integer.parseInt(symbol.getH()));
+    // Якщо це не тег-char, то додаємо його у файл-деркриптор
+    if (!line.trim().startsWith("<char")) { outDesc.add(line); }
     
-    imageFile = new File(outputDir.getPath() + separator
-                       + symbol.getImageName());
+    // Інакше обробляємо тег
+    else {
+        
+        // Парсимо тег, щоб витягти з нього атрибути
+        Element el = Jsoup.parse(line).getElementsByTag("char").first();
+        
+        // Створюємо екземпляр класу Symbol
+        symbol = new Symbol(symbols.size() + 1,
+                            el.attr("c"),  el.attr("code"),
+                            el.attr("x"),  el.attr("y"),
+                            el.attr("w"),  el.attr("h"),
+                            el.attr("dx"), el.attr("dy"), el.attr("advx"));
+        
+        // Отримуємо окремий символ - вирізаємо частинку із заг. зображення
+        imgSymbol = imFont.getSubimage(Integer.parseInt(symbol.getX()),
+                                       Integer.parseInt(symbol.getY()),
+                                       Integer.parseInt(symbol.getW()),
+                                       Integer.parseInt(symbol.getH()));
     
-    ImageIO.write(imSymbol, "png", imageFile);
-    symbols.add(symbol);
-
-}
+        // Стаорюємо новий файл для збереження окремого символу
+        imgFile = new File(outputDir.getPath() + separator
+                         + symbol.getImageName() + ".png");
+ 
+        // Зберігаємо символ як зображення і додаємо його в масив символів
+        ImageIO.write(imgSymbol, "png", imgFile);
+        symbols.add(symbol); } }
 
 // ............................................................................
 
-out.println("All OK");
+File descFile = new File(outputDir.getPath() + separator + "desc.txt");
+Files.write(descFile.toPath(), outDesc, UTF_8);
+
 return 0;
 
 }
 
-catch (IOException e) { return -1; }
+catch (Exception _) { return -1; }
 
+}
+
+// ============================================================================
+/// Збирання окремих символів в загальний *.fnt файл
+/// @param inputFile папка із вхідними даними
+/// @return результат виконання операції: 0 - успіх, -1 - помилка
+
+public int compileFont (File inputFile) {
+
+Graphics g;
+Symbol symb;
+BufferedImage imgFont, imgSymb;
+int fontImgW = -1, fontImgH = -1;
+String[] allFiles = inputFile.list();
+String number, name, charLine, charSymb;
+String path = inputFile.getParent() + separator + inputFile.getName();
+File descFile = new File(inputFile.getPath() + separator + "desc.txt");
+
+File imgFile = new File(path + ".png");
+File fntFile = new File(path + ".fnt");
+
+// ............................................................................
+
+try {
+
+List<String> inDesc = Files.readAllLines(descFile.toPath(), UTF_8);
+ArrayList<String> outDesc = new ArrayList<>();
+
+// Витягуємо ширину і висоту зображення з тегу <font>
+for (String param : inDesc.get(1).split("\" ")) {
+    if (param.startsWith("imgWidth"))
+        { fontImgW = Integer.parseInt(param.split("=\"")[1]); }
+    if (param.startsWith("imgHeight"))
+        { fontImgH = Integer.parseInt(param.split("=\"")[1]); } }
+
+// ............................................................................
+
+outDesc.add(inDesc.get(0));
+outDesc.add(inDesc.get(1));
+
+imgFont = new BufferedImage(fontImgW, fontImgH, TYPE_4BYTE_ABGR);
+g = imgFont.getGraphics();
+
+// ............................................................................
+// Зчитуємо всі зображення та записуємо їхні параметри у *.fnt файл
+
+for (int z = 1; z < allFiles.length; z++) {
+    
+    name = null;
+    number = String.format("%03d", z);
+    
+    for (String currentFile : allFiles) {
+        if (currentFile.startsWith(number))
+            { name = currentFile;
+              break; } }
+    
+    symb = new Symbol(name);
+    
+    // Заміна особливих символів
+    switch (symb.getChar())
+        { case "\"" -> charSymb = "&quot;";
+          case "&"  -> charSymb = "&amp;";
+          case "'"  -> charSymb = "&apos;";
+          case "<"  -> charSymb = "&lt;";
+          case ">"  -> charSymb = "&gt;";
+          default   -> charSymb = symb.getChar(); }
+    
+    charLine = String.format(charPattern,  symb.getCode(),
+                             symb.getX(),  symb.getY(), 
+                             symb.getW(),  symb.getH(),
+                             symb.getDx(), symb.getDy(),
+                             symb.getAdvx());
+    
+    if (!symb.getChar().isEmpty())
+        { charLine = "c=\"" + charSymb + "\" " + charLine; }
+    
+    charLine = String.format("    <char %s />", charLine);
+    outDesc.add(charLine);
+    
+    // Малювання конкретного символу на загальному зображенні
+    imgSymb = ImageIO.read(new File(inputFile.getPath() + separator + name));
+    g.drawImage(imgSymb, Integer.parseInt(symb.getX()),
+                         Integer.parseInt(symb.getY()), null);
 }
 
 // ............................................................................
-/// Параметри конкретного символу
-/// @author Rutar_Andriy
-/// 16.01.2026
+// Запис необроблених параметрів у *.fnt файл
 
-class Symbol {
+for (int z = 2; z < inDesc.size(); z++)
+    { outDesc.add(inDesc.get(z)); }
 
-private int id;
-private String sChar;
-private String sCode;
-private String sX;
-private String sY;
-private String sW;
-private String sH;
-private String sDx;
-private String sDy;
-private String sAdvx;
+// Запис зображення та опису шрифту
+ImageIO.write(imgFont, "png", imgFile);
+Files.write(fntFile.toPath(), String.join("\r\n", outDesc).getBytes(UTF_8));
 
-// ============================================================================
-
-public Symbol (int id, String sChar, String sCode, String sX, String sY,
-               String sW, String sH, String sDx, String sDy, String sAdvx) {
-
-    this.id = id;
-    this.sChar = sChar.isBlank() ? "" : Utils.fromCharToString(sChar.charAt(0));
-    this.sCode = sCode;
-    this.sX = sX;
-    this.sY = sY;
-    this.sW = sW;
-    this.sH = sH;
-    this.sDx = sDx;
-    this.sDy = sDy;
-    this.sAdvx = sAdvx;
-
+return 0;
+    
 }
 
-// ============================================================================
-
-public int getId() { return id; }
-public void setId (int id) { this.id = id; }
-
-public String getChar() { return sChar; }
-public void setChar (String sChar) { this.sChar = sChar; }
-
-public String getCode() { return sCode; }
-public void setCode (String sCode) { this.sCode = sCode; }
-
-public String getX() { return sX; }
-public void setX (String sX) { this.sX = sX; }
-
-public String getY() { return sY; }
-public void setY (String sY) { this.sY = sY; }
-
-public String getW() { return sW; }
-public void setW (String sW) { this.sW = sW; }
-
-public String getH() { return sH; }
-public void setH (String sH) { this.sH = sH; }
-
-public String getDx() { return sDx; }
-public void setDx (String sDx) { this.sDx = sDx; }
-
-public String getDy() { return sDy; }
-public void setDy (String sDy) { this.sDy = sDy; }
-
-public String getAdvx() { return sAdvx; }
-public void setAdvx (String sAdvx) { this.sAdvx = sAdvx; }
-
-// ============================================================================
-
-@Override
-public String toString() {
-    return "Symbol { id=" + id + ", char=" + sChar + ", code=" + sCode
-         + ", x=" + sX + ", y=" + sY + ", w=" + sW + ", h=" + sH
-         + ", Dx=" + sDx + ", Dy=" + sDy + ", Advx=" + sAdvx + " }";
-}
-
-// ============================================================================
-
-public String getImageName() {
-    return String.format("%03d_" + "cr=%s_" + "cd=%s_" + "x=%s_" + "y=%s_" +
-                         "w=%s_" + "h=%s_" + "Dx=%s_" + "Dy=%s_" + "Advx=%s",
-                          id, sChar, sCode, sX, sY, sW, sH, sDx, sDy, sAdvx);
-}
-
-// Кінець класу Symbol ========================================================
+catch (Exception _) { return -1; }
 
 }
 

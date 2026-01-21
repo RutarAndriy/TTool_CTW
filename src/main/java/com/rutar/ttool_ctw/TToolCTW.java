@@ -3,7 +3,6 @@ package com.rutar.ttool_ctw;
 import java.io.*;
 import java.awt.*;
 import java.net.*;
-import java.nio.*;
 import java.util.*;
 import javax.swing.*;
 import java.nio.file.*;
@@ -33,10 +32,8 @@ private File inputFile;                                         // вхідни�
 private File outputFile;                                       // вихідний файл
 
 private final JFileChooser fileOpen;           // відкривання/збереження файлів
-// private final JFileChooser fntCompile;               // компілювання шрифтів
+private final JFileChooser fntCompile;                  // компілювання шрифтів
 private final JFileChooser fntDecompile;              // декомпілювання шрифтів
-// private final JFileChooser rawCompile;                 // компілювання даних
-// private final JFileChooser rawDecompile;             // декомпілювання даних
 
 private String appDescription;                                 // опис програми
 private DefaultTableModel tableModel;              // стандартна модель таблиці
@@ -45,24 +42,17 @@ private boolean dataWasChanged;                // якщо true - дані бу�
 
 // ............................................................................
 
-private byte[] allBytes;                                   // всі зчитані байти
-private ByteBuffer buffer;                        // буфер для зчитування даних
-
 // Домашня директорія користувача
 private final File homeDir = FileSystemView.getFileSystemView()
                                            .getHomeDirectory();
 
 // Фільтр для файлів із розширенням *.csv
 private final FileNameExtensionFilter extCsv =
-          new FileNameExtensionFilter("Файли локалізації", "csv");
-
-// Фільтр для файлів із розширенням *.txt
-private final FileNameExtensionFilter extTxt =
-          new FileNameExtensionFilter("Файли локалізації", "txt");
+          new FileNameExtensionFilter("CTW файли локалізації", "csv");
 
 // Фільтр для файлів із розширенням *.fnt
 private final FileNameExtensionFilter extFnt =
-          new FileNameExtensionFilter("Файли шрифтів", "fnt");
+          new FileNameExtensionFilter("CTW файли шрифтів", "fnt");
 
 private SearchDialog searchDialog;         // діалогове вікно пошуку інформації
 
@@ -83,6 +73,14 @@ fileOpen.removeChoosableFileFilter(fileOpen
 fileOpen.addChoosableFileFilter(extCsv);
 fileOpen.setCurrentDirectory(homeDir);
 //fileOpen.setSelectedFile(new File("..."));
+
+fntCompile = new JFileChooser();
+fntCompile.setFileSelectionMode(DIRECTORIES_ONLY);
+fntCompile.removeChoosableFileFilter(fntCompile
+          .getChoosableFileFilters()[0]);
+fntCompile.addChoosableFileFilter(extFnt);
+fntCompile.setCurrentDirectory(homeDir);
+//fntDecompile.setSelectedFile(new File("..."));
 
 fntDecompile = new JFileChooser();
 fntDecompile.setFileSelectionMode(FILES_ONLY);
@@ -167,7 +165,6 @@ prepareNewTable(allStrings.getFirst().split(";"));
 
 String[] values;
 ArrayList<String> newRow = new ArrayList<>();
-int columns = allStrings.getFirst().split(";").length;
 
 for (int z = 1; z < allStrings.size(); z++) {
     
@@ -353,17 +350,21 @@ else
 // ============================================================================
 /// Вибір розпакованого шрифту для пакування
 
-private void showCompileFontDialog() {}
+private void showCompileFontDialog() {
 
-// ============================================================================
-/// Вибір даних для розпакування
+int result = fntCompile.showOpenDialog(this);
+if (result != JFileChooser.APPROVE_OPTION) { return; }
 
-private void showDecompileRawDialog() {}
+inputFile = fntCompile.getSelectedFile();
 
-// ============================================================================
-/// Вибір розпакованих даних для пакування
+int resultCode = new FontProcessor().compileFont(inputFile);
 
-private void showCompileRawDialog() {}
+if (resultCode == 0)
+    { showMessageDialog(this, "Шрифт успішно зібрано", "Повідомлення", 1); }
+else
+    { showMessageDialog(this, "Сталася критична помилка!", "Помилка", 0); }
+
+}
 
 // ============================================================================
 /// Попередня ініціалізація нової таблиці
@@ -462,9 +463,6 @@ lbl_colCount.setText(tmp);
         mn_edit = new JMenu();
         mni_fntDecompile = new JMenuItem();
         mni_fntCompile = new JMenuItem();
-        sep_three = new JPopupMenu.Separator();
-        mni_rawDecompile = new JMenuItem();
-        mni_rawCompile = new JMenuItem();
         mn_info = new JMenu();
         mni_about = new JMenuItem();
 
@@ -559,34 +557,12 @@ lbl_colCount.setText(tmp);
 
         mni_fntCompile.setText("Запакувати шрифт");
         mni_fntCompile.setActionCommand("compileFont");
-        mni_fntCompile.setEnabled(false);
         mni_fntCompile.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 onMenuClick(evt);
             }
         });
         mn_edit.add(mni_fntCompile);
-        mn_edit.add(sep_three);
-
-        mni_rawDecompile.setText("Розпакувати дані");
-        mni_rawDecompile.setActionCommand("decompileRaw");
-        mni_rawDecompile.setEnabled(false);
-        mni_rawDecompile.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                onMenuClick(evt);
-            }
-        });
-        mn_edit.add(mni_rawDecompile);
-
-        mni_rawCompile.setText("Запакувати дані");
-        mni_rawCompile.setActionCommand("compileRaw");
-        mni_rawCompile.setEnabled(false);
-        mni_rawCompile.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                onMenuClick(evt);
-            }
-        });
-        mn_edit.add(mni_rawCompile);
 
         mnb_main.add(mn_edit);
 
@@ -644,8 +620,6 @@ lbl_colCount.setText(tmp);
 
         case "decompileFont" -> showDecompileFontDialog();
         case "compileFont"   -> showCompileFontDialog();
-        case "decompileRaw"  -> showDecompileRawDialog();
-        case "compileRaw"    -> showCompileRawDialog();
 
     }   
     }//GEN-LAST:event_onMenuClick
@@ -673,12 +647,9 @@ lbl_colCount.setText(tmp);
     private JMenuItem mni_fntCompile;
     private JMenuItem mni_fntDecompile;
     private JMenuItem mni_open;
-    private JMenuItem mni_rawCompile;
-    private JMenuItem mni_rawDecompile;
     private JMenuItem mni_save;
     private JPanel pnl_footer;
     private JPopupMenu.Separator sep_one;
-    private JPopupMenu.Separator sep_three;
     private JPopupMenu.Separator sep_two;
     private JScrollPane sp_table;
     public JTable tbl_main;
