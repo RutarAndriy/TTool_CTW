@@ -6,13 +6,16 @@ import java.net.*;
 import java.util.*;
 import javax.swing.*;
 import java.nio.file.*;
+import javax.imageio.*;
 import java.util.jar.*;
 import java.awt.event.*;
+import java.awt.image.*;
 import java.nio.charset.*;
 import javax.swing.event.*;
 import javax.swing.table.*;
 import com.formdev.flatlaf.*;
 import javax.swing.filechooser.*;
+import com.rutar.ua_translator.*;
 import com.formdev.flatlaf.themes.*;
 
 import java.util.List;
@@ -42,21 +45,15 @@ private boolean dataWasChanged;                // якщо true - дані бу�
 
 // ............................................................................
 
-// Домашня директорія користувача
-private final File homeDir = FileSystemView.getFileSystemView()
-                                           .getHomeDirectory();
-
-// Фільтр для файлів із розширенням *.csv
-private final FileNameExtensionFilter extCsv =
-          new FileNameExtensionFilter("CTW файли локалізації", "csv");
-
-// Фільтр для файлів із розширенням *.fnt
-private final FileNameExtensionFilter extFnt =
-          new FileNameExtensionFilter("CTW файли шрифтів", "fnt");
-
+private File tmp;                                           // допоміжна змінна
 private SearchDialog searchDialog;         // діалогове вікно пошуку інформації
 
-public static int editableColumn = 1;   // номер стовбця, який можна редагувати
+public static int EDITABLE_COLUMN = 1;  // номер стовбця, який можна редагувати
+
+// Домашня директорія користувача
+public static final File HOME_DIR = FileSystemView.getFileSystemView()
+                                                  .getHomeDirectory();
+
 public static boolean debug = true;  // якщо true - увімк. режим налагоджування
 
 // ============================================================================
@@ -65,31 +62,14 @@ public static boolean debug = true;  // якщо true - увімк. режим �
 public TToolCTW() {
 
 initComponents();
+initAppIcons();
 
-fileOpen = new JFileChooser();
-fileOpen.setFileSelectionMode(FILES_ONLY);
-fileOpen.removeChoosableFileFilter(fileOpen
-        .getChoosableFileFilters()[0]);
-fileOpen.addChoosableFileFilter(extCsv);
-fileOpen.setCurrentDirectory(homeDir);
-//fileOpen.setSelectedFile(new File("..."));
-
-fntCompile = new JFileChooser();
-fntCompile.setFileSelectionMode(DIRECTORIES_ONLY);
-fntCompile.removeChoosableFileFilter(fntCompile
-          .getChoosableFileFilters()[0]);
-fntCompile.addChoosableFileFilter(extFnt);
-fntCompile.setCurrentDirectory(homeDir);
-//fntDecompile.setSelectedFile(new File("..."));
-
-fntDecompile = new JFileChooser();
-fntDecompile.setFileSelectionMode(FILES_ONLY);
-fntDecompile.removeChoosableFileFilter(fntDecompile
-            .getChoosableFileFilters()[0]);
-fntDecompile.addChoosableFileFilter(extFnt);
-fntDecompile.setCurrentDirectory(homeDir);
-//fntDecompile.setSelectedFile(new File("..."));
-
+fileOpen     = Utils.getFileChooser("csv", FILES_ONLY,
+                                    "CTW файли локалізації");
+fntCompile   = Utils.getFileChooser("fnt", DIRECTORIES_ONLY,
+                                    "CTW файли шрифтів");
+fntDecompile = Utils.getFileChooser("fnt", FILES_ONLY,
+                                    "CTW файли шрифтів");
 }
 
 // ============================================================================
@@ -101,17 +81,20 @@ public static void main (String args[]) {
     if (args.length > 0 &&
         args[0].equals("--debug")) { debug = true; }
     
-    Map<String, String> defaults = new HashMap<>();
-    defaults.put("@accentColor", "#767676");
-    FlatLaf.setGlobalExtraDefaults(defaults);
+    // ........................................................................
+    
+    UATranslator.init();
+    UIManager.put("FileChooser.readOnly", true);
 
-    UIManager.put("MenuItem.minimumIconSize", new Dimension(0, 0));
-    UIManager.put("MenuItem.selectionType", "underline");
-    UIManager.put("MenuBar.selectionType", "underline");
-    UIManager.put("MenuItem.iconTextGap", 0);
+    JFrame .setDefaultLookAndFeelDecorated(true);
+    JDialog.setDefaultLookAndFeelDecorated(true);
+    
+    FlatLaf.registerCustomDefaultsSource("com.rutar.ttool_ctw.themes");
 
     try { FlatMacDarkLaf.setup(); }
     catch (Exception e) {}
+    
+    // ........................................................................
     
     EventQueue.invokeLater(() -> {
         new TToolCTW().setVisible(true);
@@ -144,6 +127,7 @@ int result = fileOpen.showOpenDialog(this);
 if (result != JFileChooser.APPROVE_OPTION) { return; }
 
 openCsvFile();
+updateAppTitle();
 
 }
 
@@ -247,6 +231,7 @@ for (int r = 0; r < rowCount; r++) {
     line = "";
     for (int c = 1; c < colCount; c++)
         { value = (String) tbl_main.getValueAt(r, c);
+          value = value != null ? Utils.replaceUnusedChars(value) : value;
           line += value == null ? "" : value;
           line += (c < colCount - 1) ? ";" : ""; }
     
@@ -258,6 +243,7 @@ try {
 dataWasChanged = false;
 Files.write(outputFile.toPath(), result, UTF_8);
 
+updateAppTitle();
 JOptionPane.showMessageDialog(this, "Файл " + outputFile.getName()
                           + " успішно збережено", "Повідомлення", 1);
 
@@ -319,12 +305,9 @@ showMessageDialog(this, pane, "Про програму", INFORMATION_MESSAGE);
 // ============================================================================
 /// Відображення вікна пошуку інформації
 
-private void showSearchDialog() {
-        
-    if (searchDialog == null) { searchDialog = new SearchDialog(this); }    
-    searchDialog.setVisible(true);
-
-}
+private void showSearchDialog()
+    { searchDialog = new SearchDialog(this);   
+      searchDialog.setVisible(true); }
 
 // ============================================================================
 /// Відображення вікна підтвердження виходу
@@ -370,6 +353,9 @@ else
 
 private void showCompileFontDialog() {
 
+tmp = Utils.getLastDir(fntDecompile);
+if (tmp != null) { fntCompile.setCurrentDirectory(tmp); }
+
 int result = fntCompile.showOpenDialog(this);
 if (result != JFileChooser.APPROVE_OPTION) { return; }
 
@@ -392,13 +378,13 @@ private void prepareNewTable (String[] columns) {
 dataWasChanged = false;
 inputFile = fileOpen.getSelectedFile();
 sp_table.getVerticalScrollBar().setValue(0);
-editableColumn = columns[0].equals("key") ? 2 : 1;
+EDITABLE_COLUMN = columns[0].equals("key") ? 2 : 1;
 
 tableModel = new DefaultTableModel() {
     @Override
     public boolean isCellEditable (int row, int column)
-        { return column == editableColumn; }
-};
+        { return column == EDITABLE_COLUMN; }
+        };
 
 tbl_main.setModel(tableModel);
 
@@ -433,6 +419,7 @@ setTableInfo();
 
 tableModel.addTableModelListener((TableModelEvent e) -> {
     dataWasChanged = true;
+    updateAppTitle();
 });
 
 }
@@ -453,6 +440,39 @@ tmp = lbl_colCount.getText();
 tmp = tmp.substring(0, tmp.indexOf(":") + 1) + " "
                   + tableModel.getColumnCount();
 lbl_colCount.setText(tmp);
+    
+}
+
+// ============================================================================
+/// Оновлення заголовку головного вікна
+
+private void updateAppTitle() {
+    
+    String newTitle = !dataWasChanged ? inputFile.getName() :
+                                 "* " + inputFile.getName() + " *";
+    
+    if (!getTitle().equals(newTitle)) { setTitle(newTitle); }
+}
+
+// ============================================================================
+/// Встановлення іконок для головного вікна
+
+private void initAppIcons() {
+
+    BufferedImage icon;
+    ArrayList<Image> appIcons = new ArrayList<>();
+
+    try {
+        
+    for (String resource : new String[] { "icon_16.png",
+                                          "icon_32.png" }) {
+        resource = "icons/" + resource;
+        icon = ImageIO.read(getClass().getResourceAsStream(resource));
+        appIcons.add(icon); }
+    
+    setIconImages(appIcons); }
+    
+    catch (IOException _) { }
     
 }
 
