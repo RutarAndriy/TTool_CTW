@@ -45,7 +45,7 @@ private boolean dataWasChanged;                // якщо true - дані бу�
 
 // ............................................................................
 
-private File tmp;                                           // допоміжна змінна
+private File tmpFile;                                       // допоміжна змінна
 private SearchDialog searchDialog;         // діалогове вікно пошуку інформації
 
 public static int EDITABLE_COLUMN = 1;  // номер стовбця, який можна редагувати
@@ -353,8 +353,8 @@ else
 
 private void showCompileFontDialog() {
 
-tmp = Utils.getLastDir(fntDecompile);
-if (tmp != null) { fntCompile.setCurrentDirectory(tmp); }
+tmpFile = Utils.getLastDir(fntDecompile);
+if (tmpFile != null) { fntCompile.setCurrentDirectory(tmpFile); }
 
 int result = fntCompile.showOpenDialog(this);
 if (result != JFileChooser.APPROVE_OPTION) { return; }
@@ -417,7 +417,9 @@ for (int z = 1; z < tbl_main.getColumnCount(); z++) {
 
 setTableInfo();
 
+mni_find.setEnabled(true);
 tableModel.addTableModelListener((TableModelEvent e) -> {
+    mni_save.setEnabled(true);
     dataWasChanged = true;
     updateAppTitle();
 });
@@ -429,17 +431,17 @@ tableModel.addTableModelListener((TableModelEvent e) -> {
 
 private void setTableInfo() {
 
-String tmp;
-    
-tmp = lbl_rowCount.getText();
-tmp = tmp.substring(0, tmp.indexOf(":") + 1) + " "
-                  + tableModel.getRowCount();
-lbl_rowCount.setText(tmp);
+    String tmp;
 
-tmp = lbl_colCount.getText();
-tmp = tmp.substring(0, tmp.indexOf(":") + 1) + " "
-                  + tableModel.getColumnCount();
-lbl_colCount.setText(tmp);
+    tmp = lbl_rowCount.getText();
+    tmp = tmp.substring(0, tmp.indexOf(":") + 1) + " "
+                      + tableModel.getRowCount();
+    lbl_rowCount.setText(tmp);
+
+    tmp = lbl_colCount.getText();
+    tmp = tmp.substring(0, tmp.indexOf(":") + 1) + " "
+                      + tableModel.getColumnCount();
+    lbl_colCount.setText(tmp);
     
 }
 
@@ -551,6 +553,7 @@ private void initAppIcons() {
         mni_save.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
         mni_save.setText("Зберегти");
         mni_save.setActionCommand("save");
+        mni_save.setEnabled(false);
         mni_save.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 onMenuClick(evt);
@@ -562,6 +565,7 @@ private void initAppIcons() {
         mni_find.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.CTRL_DOWN_MASK));
         mni_find.setText("Пошук");
         mni_find.setActionCommand("find");
+        mni_find.setEnabled(false);
         mni_find.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 onMenuClick(evt);
