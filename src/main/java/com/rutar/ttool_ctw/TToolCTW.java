@@ -397,6 +397,8 @@ catch (IOException _) { showMessageDialog(this, "Не вдалося прочи�
 
 for (int z = 1; z < patchStrings.size(); z++) {
     
+    if (z > tbl_main.getRowCount()) { break; }
+    
     values = patchStrings.get(z).split(";");
     
     key   = (String) tbl_main.getValueAt(z - 1, 0);
