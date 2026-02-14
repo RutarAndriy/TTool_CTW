@@ -48,6 +48,9 @@ private boolean dataWasChanged;                // якщо true - дані бу�
 private File tmpFile;                                       // допоміжна змінна
 private SearchDialog searchDialog;         // діалогове вікно пошуку інформації
 
+private List<String> allStrings;             // масив усіх рядків мовного файлу
+private List<String> patchStrings;                   // масив усіх рядків патчу
+
 public static int EDITABLE_COLUMN = 1;  // номер стовбця, який можна редагувати
 
 // Домашня директорія користувача
@@ -136,12 +139,13 @@ updateAppTitle();
 
 private void openCsvFile() {
 
-List<String> allStrings = null;
+allStrings = null;
 inputFile = fileOpen.getSelectedFile();
 
 try { allStrings = Files.readAllLines(inputFile.toPath(), UTF_8); }
 catch (IOException _) { showMessageDialog(this, "Не вдалося прочитати файл",
-                                                "Помилка", 0); }
+                                                "Помилка", 0);
+                        return; }
 
 prepareNewTable(allStrings.getFirst().split(";"));
 
@@ -246,12 +250,11 @@ Files.write(outputFile.toPath(), result, UTF_8);
 updateAppTitle();
 JOptionPane.showMessageDialog(this, "Файл " + outputFile.getName()
                           + " успішно збережено", "Повідомлення", 1);
-
 }
 
-catch (Exception _) { showMessageDialog(this, "При збереженні файлу відбулася "
-                                     + "критична помилка", "Помилка", 0); }
-
+catch (HeadlessException | IOException _)
+    { showMessageDialog(this, "При збереженні файлу відбулася "
+                            + "критична помилка", "Помилка", 0); }
 }
 
 // ============================================================================
@@ -371,6 +374,49 @@ else
 }
 
 // ============================================================================
+/// Вибір попередньо перекладеного файлу для об'єднання прекладів
+
+private void showLangPatchDialog() {
+
+int count = 0;
+String[] values;
+String key, oldEn, newEn, newValue;
+
+int result = fileOpen.showOpenDialog(this);
+if (result != JFileChooser.APPROVE_OPTION) { return; }
+
+patchStrings = null;
+inputFile = fileOpen.getSelectedFile();
+
+try { patchStrings = Files.readAllLines(inputFile.toPath(), UTF_8); }
+catch (IOException _) { showMessageDialog(this, "Не вдалося прочитати файл",
+                                                "Помилка", 0);
+                        return; }
+
+// ............................................................................
+
+for (int z = 1; z < patchStrings.size(); z++) {
+    
+    values = patchStrings.get(z).split(";");
+    
+    key   = (String) tbl_main.getValueAt(z - 1, 0);
+    oldEn = (String) tbl_main.getValueAt(z - 1, EDITABLE_COLUMN + 1);
+    oldEn = oldEn == null ? "" : oldEn;
+    newEn = values.length > EDITABLE_COLUMN ? values[EDITABLE_COLUMN] : "";
+    
+    if (z == Integer.parseInt(key) && oldEn.equals(newEn))
+        { newValue = values.length > 0 ? values[EDITABLE_COLUMN - 1] : "";
+          tbl_main.setValueAt(newValue, z - 1, EDITABLE_COLUMN);
+          count++; } }
+
+// ............................................................................
+
+if (count > 0) { showMessageDialog(this, "Переклади успішно об'єднано, " +
+                                         "замінено " + count + " рядків",
+                                         "Об'єднання перекладів", 1); }
+}
+
+// ============================================================================
 /// Попередня ініціалізація нової таблиці
 
 private void prepareNewTable (String[] columns) {
@@ -384,7 +430,7 @@ tableModel = new DefaultTableModel() {
     @Override
     public boolean isCellEditable (int row, int column)
         { return column == EDITABLE_COLUMN; }
-        };
+};
 
 tbl_main.setModel(tableModel);
 
@@ -415,9 +461,10 @@ for (int z = 1; z < tbl_main.getColumnCount(); z++) {
 
 // ............................................................................
 
-setTableInfo();
+updateTableInfo();
 
 mni_find.setEnabled(true);
+mni_langPatch.setEnabled(true);
 tableModel.addTableModelListener((TableModelEvent e) -> {
     mni_save.setEnabled(true);
     dataWasChanged = true;
@@ -429,7 +476,7 @@ tableModel.addTableModelListener((TableModelEvent e) -> {
 // ============================================================================
 /// Оновлення інформації про таблицю
 
-private void setTableInfo() {
+private void updateTableInfo() {
 
     String tmp;
 
@@ -503,6 +550,8 @@ private void initAppIcons() {
         mn_edit = new JMenu();
         mni_fntDecompile = new JMenuItem();
         mni_fntCompile = new JMenuItem();
+        sep_three = new JPopupMenu.Separator();
+        mni_langPatch = new JMenuItem();
         mn_info = new JMenu();
         mni_about = new JMenuItem();
 
@@ -605,6 +654,17 @@ private void initAppIcons() {
             }
         });
         mn_edit.add(mni_fntCompile);
+        mn_edit.add(sep_three);
+
+        mni_langPatch.setText("Об'єднати переклади");
+        mni_langPatch.setActionCommand("langPatch");
+        mni_langPatch.setEnabled(false);
+        mni_langPatch.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                onMenuClick(evt);
+            }
+        });
+        mn_edit.add(mni_langPatch);
 
         mnb_main.add(mn_edit);
 
@@ -662,6 +722,7 @@ private void initAppIcons() {
 
         case "decompileFont" -> showDecompileFontDialog();
         case "compileFont"   -> showCompileFontDialog();
+        case "langPatch"     -> showLangPatchDialog();
 
     }   
     }//GEN-LAST:event_onMenuClick
@@ -688,10 +749,12 @@ private void initAppIcons() {
     private JMenuItem mni_find;
     private JMenuItem mni_fntCompile;
     private JMenuItem mni_fntDecompile;
+    private JMenuItem mni_langPatch;
     private JMenuItem mni_open;
     private JMenuItem mni_save;
     private JPanel pnl_footer;
     private JPopupMenu.Separator sep_one;
+    private JPopupMenu.Separator sep_three;
     private JPopupMenu.Separator sep_two;
     private JScrollPane sp_table;
     public JTable tbl_main;

@@ -88,6 +88,18 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onMenuClick"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="sep_three">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mni_langPatch">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x41e;&#x431;&apos;&#x454;&#x434;&#x43d;&#x430;&#x442;&#x438; &#x43f;&#x435;&#x440;&#x435;&#x43a;&#x43b;&#x430;&#x434;&#x438;"/>
+                <Property name="actionCommand" type="java.lang.String" value="langPatch"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onMenuClick"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mn_info">
