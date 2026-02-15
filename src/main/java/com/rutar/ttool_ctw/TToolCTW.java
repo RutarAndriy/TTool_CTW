@@ -380,7 +380,7 @@ private void showLangPatchDialog() {
 
 int count = 0;
 String[] values;
-String key, oldEn, newEn, newValue;
+String number, oldKey, newKey;
 
 int result = fileOpen.showOpenDialog(this);
 if (result != JFileChooser.APPROVE_OPTION) { return; }
@@ -394,22 +394,43 @@ catch (IOException _) { showMessageDialog(this, "Не вдалося прочи�
                         return; }
 
 // ............................................................................
+// Обробка файлів, які містять ключі та значення
+
+if (patchStrings.getFirst().startsWith("key")) {
 
 for (int z = 1; z < patchStrings.size(); z++) {
     
     if (z > tbl_main.getRowCount()) { break; }
     
     values = patchStrings.get(z).split(";");
+    if (values.length <= 1) { continue; }
+
+    number = (String) tbl_main.getValueAt(z - 1, 0);
+    oldKey = (String) tbl_main.getValueAt(z - 1, 1);
+    oldKey = oldKey == null ? "" : oldKey;
+    newKey = values[0];
     
-    key   = (String) tbl_main.getValueAt(z - 1, 0);
-    oldEn = (String) tbl_main.getValueAt(z - 1, EDITABLE_COLUMN + 1);
-    oldEn = oldEn == null ? "" : oldEn;
-    newEn = values.length > EDITABLE_COLUMN ? values[EDITABLE_COLUMN] : "";
+    if (z == Integer.parseInt(number) && oldKey.equals(newKey))
+        { tbl_main.setValueAt(values[1], z - 1, 2);
+          count++; } } }
+
+// ............................................................................
+// Обробка решти файлів
+
+else {
+
+for (int z = 1; z < patchStrings.size(); z++) {
     
-    if (z == Integer.parseInt(key) && oldEn.equals(newEn))
-        { newValue = values.length > 0 ? values[EDITABLE_COLUMN - 1] : "";
-          tbl_main.setValueAt(newValue, z - 1, EDITABLE_COLUMN);
-          count++; } }
+    if (z > tbl_main.getRowCount()) { break; }
+    
+    values = patchStrings.get(z).split(";");
+    if (values.length == 0) { continue; }
+
+    number = (String) tbl_main.getValueAt(z - 1, 0);
+    
+    if (z == Integer.parseInt(number))
+        { tbl_main.setValueAt(values[0], z - 1, 1);
+          count++; } } }
 
 // ............................................................................
 
