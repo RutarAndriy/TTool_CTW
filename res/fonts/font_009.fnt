@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<font FontName="Segoe Print" Description="BookText" CharFlag0="1" CharFlag1="1" CharFlag2="1" CharFlag3="1" CharFlag4="1" CharFlag5="1" CharFlag6="0" CharFlag7="0" CharFlag8="0" CharFlag9="0" CharFlag10="1" CharFlag11="1" CharFlag12="1" CharFlag13="1" CharFlag14="1" CharFlag15="1" charBorderLeft="4" charBorderRight="4" charBorderUp="24" charBorderDown="23" fontHeight="31" fontWidth="0" fontWeight="-13" charDx="1" lineDy="1" imgWidth="4096" imgHeight="158" spaceWidth="12">
+    <char c="A" code="65" x="1" y="1" w="32" h="78" dx="0" dy="1" advx="24" />
+    <char c="B" code="66" x="33" y="1" w="26" h="78" dx="-3" dy="2" advx="23" />
+    <char c="C" code="67" x="59" y="1" w="28" h="78" dx="-2" dy="2" advx="22" />
+    <char c="D" code="68" x="87" y="1" w="30" h="78" dx="-2" dy="2" advx="25" />
+    <char c="E" code="69" x="117" y="1" w="27" h="78" dx="-2" dy="2" advx="21" />
+    <char c="F" code="70" x="144" y="1" w="25" h="78" dx="-3" dy="1" advx="18" />
+    <char c="G" code="71" x="169" y="1" w="28" h="78" dx="-2" dy="4" advx="24" />
+    <char c="H" code="72" x="197" y="1" w="29" h="78" dx="-2" dy="2" advx="25" />
+    <char c="I" code="73" x="226" y="1" w="13" h="78" dx="-3" dy="0" advx="10" />
+    <char c="J" code="74" x="239" y="1" w="25" h="78" dx="0" dy="1" advx="18" />
+    <char c="K" code="75" x="264" y="1" w="28" h="78" dx="-2" dy="1" advx="23" />
+    <char c="L" code="76" x="292" y="1" w="25" h="78" dx="-2" dy="0" advx="20" />
+    <char c="M" code="77" x="317" y="1" w="34" h="78" dx="-2" dy="1" advx="29" />
+    <char c="N" code="78" x="351" y="1" w="29" h="78" dx="-3" dy="1" advx="25" />
+    <char c="O" code="79" x="380" y="1" w="30" h="78" dx="-2" dy="2" advx="25" />
+    <char c="P" code="80" x="410" y="1" w="27" h="78" dx="-3" dy="1" advx="22" />
+    <char c="Q" code="81" x="437" y="1" w="29" h="78" dx="-2" dy="5" advx="25" />
+    <char c="R" code="82" x="466" y="1" w="29" h="78" dx="-2" dy="1" advx="23" />
+    <char c="S" code="83" x="495" y="1" w="26" h="78" dx="-1" dy="2" advx="20" />
+    <char c="T" code="84" x="521" y="1" w="31" h="78" dx="-1" dy="0" advx="21" />
+    <char c="U" code="85" x="552" y="1" w="29" h="78" dx="-3" dy="2" advx="24" />
+    <char c="V" code="86" x="581" y="1" w="31" h="78" dx="-2" dy="0" advx="22" />
+    <char c="W" code="87" x="612" y="1" w="37" h="78" dx="-2" dy="2" advx="31" />
+    <char c="X" code="88" x="649" y="1" w="31" h="78" dx="0" dy="2" advx="23" />
+    <char c="Y" code="89" x="680" y="1" w="30" h="78" dx="-1" dy="0" advx="21" />
+    <char c="Z" code="90" x="710" y="1" w="30" h="78" dx="-1" dy="1" advx="24" />
+    <char code="536" x="740" y="1" w="26" h="78" dx="-1" dy="11" advx="20" />
+    <char code="538" x="766" y="1" w="31" h="78" dx="-1" dy="11" advx="21" />
+    <char code="258" x="797" y="1" w="32" h="78" dx="0" dy="1" advx="24" />
+    <char code="206" x="829" y="1" w="21" h="78" dx="-2" dy="0" advx="10" />
+    <char code="194" x="850" y="1" w="32" h="78" dx="0" dy="1" advx="24" />
+    <char c="a" code="97" x="882" y="1" w="24" h="78" dx="-1" dy="0" advx="18" />
+    <char c="b" code="98" x="906" y="1" w="24" h="78" dx="-2" dy="0" advx="18" />
+    <char c="c" code="99" x="930" y="1" w="21" h="78" dx="-1" dy="1" advx="16" />
+    <char c="d" code="100" x="951" y="1" w="26" h="78" dx="-1" dy="0" advx="21" />
+    <char c="e" code="101" x="977" y="1" w="22" h="78" dx="-2" dy="1" advx="16" />
+    <char c="f" code="102" x="999" y="1" w="20" h="78" dx="-2" dy="2" advx="12" />
+    <char c="g" code="103" x="1019" y="1" w="27" h="78" dx="2" dy="10" advx="18" />
+    <char c="h" code="104" x="1046" y="1" w="26" h="78" dx="-1" dy="0" advx="19" />
+    <char c="i" code="105" x="1072" y="1" w="16" h="78" dx="-2" dy="0" advx="9" />
+    <char c="j" code="106" x="1088" y="1" w="23" h="78" dx="6" dy="10" advx="10" />
+    <char c="k" code="107" x="1111" y="1" w="24" h="78" dx="-2" dy="1" advx="18" />
+    <char c="l" code="108" x="1135" y="1" w="14" h="78" dx="-3" dy="1" advx="9" />
+    <char c="m" code="109" x="1149" y="1" w="36" h="78" dx="-3" dy="0" advx="32" />
+    <char c="n" code="110" x="1185" y="1" w="26" h="78" dx="-2" dy="0" advx="21" />
+    <char c="o" code="111" x="1211" y="1" w="23" h="78" dx="-2" dy="2" advx="18" />
+    <char c="p" code="112" x="1234" y="1" w="27" h="78" dx="0" dy="10" advx="20" />
+    <char c="q" code="113" x="1261" y="1" w="24" h="78" dx="-1" dy="9" advx="18" />
+    <char c="r" code="114" x="1285" y="1" w="23" h="78" dx="-2" dy="1" advx="16" />
+    <char c="s" code="115" x="1308" y="1" w="20" h="78" dx="0" dy="2" advx="13" />
+    <char c="t" code="116" x="1328" y="1" w="22" h="78" dx="-1" dy="1" advx="15" />
+    <char c="u" code="117" x="1350" y="1" w="24" h="78" dx="-2" dy="1" advx="19" />
+    <char c="v" code="118" x="1374" y="1" w="25" h="78" dx="-1" dy="2" advx="17" />
+    <char c="w" code="119" x="1399" y="1" w="33" h="78" dx="-2" dy="1" advx="27" />
+    <char c="x" code="120" x="1432" y="1" w="24" h="78" dx="0" dy="2" advx="17" />
+    <char c="y" code="121" x="1456" y="1" w="25" h="78" dx="0" dy="10" advx="18" />
+    <char c="z" code="122" x="1481" y="1" w="25" h="78" dx="1" dy="1" advx="16" />
+    <char code="537" x="1506" y="1" w="20" h="78" dx="0" dy="11" advx="13" />
+    <char code="539" x="1526" y="1" w="22" h="78" dx="-1" dy="11" advx="15" />
+    <char code="259" x="1548" y="1" w="25" h="78" dx="-1" dy="0" advx="18" />
+    <char code="238" x="1573" y="1" w="21" h="78" dx="0" dy="0" advx="9" />
+    <char code="226" x="1594" y="1" w="26" h="78" dx="-1" dy="0" advx="18" />
+    <char c="!" code="33" x="1620" y="1" w="15" h="78" dx="-2" dy="0" advx="10" />
+    <char c="&quot;" code="34" x="1635" y="1" w="18" h="78" dx="-2" dy="-11" advx="13" />
+    <char c="#" code="35" x="1653" y="1" w="32" h="78" dx="0" dy="-1" advx="25" />
+    <char c="$" code="36" x="1685" y="1" w="23" h="78" dx="0" dy="4" advx="17" />
+    <char c="%" code="37" x="1708" y="1" w="27" h="78" dx="-2" dy="0" advx="23" />
+    <char c="&amp;" code="38" x="1735" y="1" w="33" h="78" dx="-3" dy="1" advx="29" />
+    <char c="&apos;" code="39" x="1768" y="1" w="12" h="78" dx="-2" dy="-10" advx="7" />
+    <char c="(" code="40" x="1780" y="1" w="19" h="78" dx="-1" dy="7" advx="12" />
+    <char c=")" code="41" x="1799" y="1" w="17" h="78" dx="0" dy="8" advx="11" />
+    <char c="*" code="42" x="1816" y="1" w="23" h="78" dx="0" dy="-8" advx="16" />
+    <char c="+" code="43" x="1839" y="1" w="23" h="78" dx="-1" dy="0" advx="18" />
+    <char c="," code="44" x="1862" y="1" w="15" h="78" dx="-2" dy="4" advx="11" />
+    <char c="-" code="45" x="1877" y="1" w="22" h="78" dx="-5" dy="-7" advx="20" />
+    <char c="." code="46" x="1899" y="1" w="12" h="78" dx="-2" dy="0" advx="8" />
+    <char c="/" code="47" x="1911" y="1" w="27" h="78" dx="1" dy="2" advx="18" />
+    <char c=":" code="58" x="1938" y="1" w="12" h="78" dx="-3" dy="0" advx="9" />
+    <char c=";" code="59" x="1950" y="1" w="15" h="78" dx="0" dy="4" advx="10" />
+    <char c="&lt;" code="60" x="1965" y="1" w="22" h="78" dx="-1" dy="-2" advx="17" />
+    <char c="=" code="61" x="1987" y="1" w="23" h="78" dx="-2" dy="-4" advx="19" />
+    <char c="&gt;" code="62" x="2010" y="1" w="22" h="78" dx="-3" dy="-1" advx="18" />
+    <char c="?" code="63" x="2032" y="1" w="22" h="78" dx="-2" dy="0" advx="16" />
+    <char c="@" code="64" x="2054" y="1" w="31" h="78" dx="-2" dy="0" advx="26" />
+    <char c="[" code="91" x="2085" y="1" w="18" h="78" dx="-3" dy="9" advx="13" />
+    <char c="\" code="92" x="2103" y="1" w="25" h="78" dx="0" dy="4" advx="17" />
+    <char c="]" code="93" x="2128" y="1" w="20" h="78" dx="0" dy="8" advx="13" />
+    <char c="^" code="94" x="2148" y="1" w="24" h="78" dx="-1" dy="-8" advx="18" />
+    <char c="_" code="95" x="2172" y="1" w="23" h="78" dx="1" dy="3" advx="13" />
+    <char c="`" code="96" x="2195" y="1" w="17" h="78" dx="0" dy="-15" advx="10" />
+    <char code="123" x="2212" y="1" w="21" h="78" dx="-1" dy="8" advx="13" />
+    <char code="124" x="2233" y="1" w="12" h="78" dx="-3" dy="15" advx="10" />
+    <char code="125" x="2245" y="1" w="20" h="78" dx="0" dy="8" advx="12" />
+    <char code="126" x="2265" y="1" w="30" h="78" dx="-1" dy="-6" advx="24" />
+    <char c="0" code="48" x="2295" y="1" w="31" h="78" dx="0" dy="0" advx="23" />
+    <char c="1" code="49" x="2326" y="1" w="27" h="78" dx="-2" dy="0" advx="23" />
+    <char c="2" code="50" x="2353" y="1" w="29" h="78" dx="-1" dy="2" advx="23" />
+    <char c="3" code="51" x="2382" y="1" w="27" h="78" dx="-2" dy="1" advx="23" />
+    <char c="4" code="52" x="2409" y="1" w="31" h="78" dx="1" dy="1" advx="23" />
+    <char c="5" code="53" x="2440" y="1" w="30" h="78" dx="-2" dy="0" advx="23" />
+    <char c="6" code="54" x="2470" y="1" w="27" h="78" dx="-2" dy="0" advx="23" />
+    <char c="7" code="55" x="2497" y="1" w="26" h="78" dx="-4" dy="0" advx="23" />
+    <char c="8" code="56" x="2523" y="1" w="23" h="78" dx="-4" dy="0" advx="23" />
+    <char c="9" code="57" x="2546" y="1" w="25" h="78" dx="-4" dy="0" advx="23" />
+    <char code="199" x="2571" y="1" w="28" h="78" dx="-2" dy="10" advx="22" />
+    <char code="252" x="2599" y="1" w="24" h="78" dx="-2" dy="1" advx="19" />
+    <char code="233" x="2623" y="1" w="22" h="78" dx="-2" dy="1" advx="16" />
+    <char code="228" x="2645" y="1" w="24" h="78" dx="-1" dy="0" advx="18" />
+    <char code="224" x="2669" y="1" w="24" h="78" dx="-1" dy="0" advx="18" />
+    <char code="229" x="2693" y="1" w="24" h="78" dx="-1" dy="0" advx="18" />
+    <char code="231" x="2717" y="1" w="22" h="78" dx="0" dy="9" advx="16" />
+    <char code="234" x="2739" y="1" w="24" h="78" dx="-2" dy="1" advx="16" />
+    <char code="235" x="2763" y="1" w="22" h="78" dx="-2" dy="1" advx="16" />
+    <char code="232" x="2785" y="1" w="22" h="78" dx="-2" dy="1" advx="16" />
+    <char code="239" x="2807" y="1" w="17" h="78" dx="-2" dy="0" advx="9" />
+    <char code="236" x="2824" y="1" w="17" h="78" dx="1" dy="0" advx="9" />
+    <char code="196" x="2841" y="1" w="32" h="78" dx="0" dy="1" advx="24" />
+    <char code="197" x="2873" y="1" w="32" h="78" dx="0" dy="1" advx="24" />
+    <char code="201" x="2905" y="1" w="27" h="78" dx="-2" dy="2" advx="21" />
+    <char code="230" x="2932" y="1" w="32" h="78" dx="-1" dy="1" advx="25" />
+    <char code="198" x="2964" y="1" w="44" h="78" dx="2" dy="3" advx="34" />
+    <char code="244" x="3008" y="1" w="25" h="78" dx="-2" dy="2" advx="18" />
+    <char code="246" x="3033" y="1" w="23" h="78" dx="-2" dy="2" advx="18" />
+    <char code="242" x="3056" y="1" w="23" h="78" dx="-2" dy="2" advx="18" />
+    <char code="251" x="3079" y="1" w="24" h="78" dx="-2" dy="1" advx="19" />
+    <char code="249" x="3103" y="1" w="24" h="78" dx="-2" dy="1" advx="19" />
+    <char code="255" x="3127" y="1" w="25" h="78" dx="0" dy="10" advx="18" />
+    <char code="214" x="3152" y="1" w="30" h="78" dx="-2" dy="2" advx="25" />
+    <char code="220" x="3182" y="1" w="29" h="78" dx="-3" dy="2" advx="24" />
+    <char code="248" x="3211" y="1" w="23" h="78" dx="-2" dy="4" advx="18" />
+    <char code="163" x="3234" y="1" w="27" h="78" dx="-1" dy="0" advx="21" />
+    <char code="216" x="3261" y="1" w="30" h="78" dx="-2" dy="2" advx="25" />
+    <char code="215" x="3291" y="1" w="22" h="78" dx="-2" dy="-1" advx="18" />
+    <char code="402" x="3313" y="1" w="25" h="78" dx="0" dy="0" advx="16" />
+    <char code="225" x="3338" y="1" w="25" h="78" dx="-1" dy="0" advx="18" />
+    <char code="237" x="3363" y="1" w="20" h="78" dx="-2" dy="0" advx="9" />
+    <char code="243" x="3383" y="1" w="25" h="78" dx="-2" dy="2" advx="18" />
+    <char code="250" x="3408" y="1" w="24" h="78" dx="-2" dy="1" advx="19" />
+    <char code="241" x="3432" y="1" w="26" h="78" dx="-2" dy="0" advx="21" />
+    <char code="209" x="3458" y="1" w="29" h="78" dx="-3" dy="1" advx="25" />
+    <char code="191" x="3487" y="1" w="22" h="78" dx="-1" dy="8" advx="15" />
+    <char code="174" x="3509" y="1" w="35" h="78" dx="-1" dy="-1" advx="29" />
+    <char code="161" x="3544" y="1" w="14" h="78" dx="-2" dy="6" advx="9" />
+    <char code="193" x="3558" y="1" w="32" h="78" dx="0" dy="1" advx="24" />
+    <char code="192" x="3590" y="1" w="32" h="78" dx="0" dy="1" advx="24" />
+    <char code="169" x="3622" y="1" w="36" h="78" dx="-2" dy="-1" advx="30" />
+    <char code="227" x="3658" y="1" w="26" h="78" dx="-1" dy="0" advx="18" />
+    <char code="195" x="3684" y="1" w="32" h="78" dx="0" dy="1" advx="24" />
+    <char code="208" x="3716" y="1" w="32" h="78" dx="0" dy="2" advx="25" />
+    <char code="202" x="3748" y="1" w="27" h="78" dx="-2" dy="2" advx="21" />
+    <char code="203" x="3775" y="1" w="27" h="78" dx="-2" dy="2" advx="21" />
+    <char code="200" x="3802" y="1" w="27" h="78" dx="-2" dy="2" advx="21" />
+    <char code="305" x="3829" y="1" w="13" h="78" dx="-2" dy="0" advx="9" />
+    <char code="205" x="3842" y="1" w="20" h="78" dx="-3" dy="0" advx="10" />
+    <char code="207" x="3862" y="1" w="17" h="78" dx="-3" dy="0" advx="10" />
+    <char code="204" x="3879" y="1" w="17" h="78" dx="-2" dy="0" advx="10" />
+    <char code="211" x="3896" y="1" w="30" h="78" dx="-2" dy="2" advx="25" />
+    <char code="223" x="3926" y="1" w="26" h="78" dx="2" dy="8" advx="17" />
+    <char code="212" x="3952" y="1" w="30" h="78" dx="-2" dy="2" advx="25" />
+    <char code="210" x="3982" y="1" w="30" h="78" dx="-2" dy="2" advx="25" />
+    <char code="245" x="4012" y="1" w="25" h="78" dx="-2" dy="2" advx="18" />
+    <char code="213" x="4037" y="1" w="30" h="78" dx="-2" dy="2" advx="25" />
+    <char code="181" x="4067" y="1" w="28" h="78" dx="-2" dy="7" advx="23" />
+    <char code="254" x="1" y="79" w="27" h="78" dx="0" dy="10" advx="20" />
+    <char code="222" x="28" y="79" w="31" h="78" dx="-3" dy="1" advx="25" />
+    <char code="218" x="59" y="79" w="29" h="78" dx="-3" dy="2" advx="24" />
+    <char code="219" x="88" y="79" w="29" h="78" dx="-3" dy="2" advx="24" />
+    <char code="217" x="117" y="79" w="29" h="78" dx="-3" dy="2" advx="24" />
+    <char code="253" x="146" y="79" w="27" h="78" dx="0" dy="10" advx="18" />
+    <char code="221" x="173" y="79" w="30" h="78" dx="-1" dy="0" advx="21" />
+    <char code="1040" x="203" y="79" w="36" h="78" dx="1" dy="2" advx="27" />
+    <char code="1041" x="239" y="79" w="27" h="78" dx="-2" dy="3" advx="22" />
+    <char code="1042" x="266" y="79" w="27" h="78" dx="-3" dy="3" advx="24" />
+    <char code="1043" x="293" y="79" w="28" h="78" dx="-3" dy="1" advx="22" />
+    <char code="1044" x="321" y="79" w="36" h="78" dx="-1" dy="9" advx="29" />
+    <char code="1045" x="357" y="79" w="26" h="78" dx="-3" dy="2" advx="23" />
+    <char code="1025" x="383" y="79" w="26" h="78" dx="-3" dy="2" advx="23" />
+    <char code="1046" x="409" y="79" w="40" h="78" dx="1" dy="2" advx="32" />
+    <char code="1047" x="449" y="79" w="26" h="78" dx="-1" dy="2" advx="20" />
+    <char code="1048" x="475" y="79" w="31" h="78" dx="-3" dy="1" advx="29" />
+    <char code="1049" x="506" y="79" w="31" h="78" dx="-3" dy="1" advx="29" />
+    <char code="1050" x="537" y="79" w="33" h="78" dx="-4" dy="1" advx="30" />
+    <char code="1051" x="570" y="79" w="33" h="78" dx="0" dy="2" advx="26" />
+    <char code="1052" x="603" y="79" w="35" h="78" dx="-2" dy="2" advx="31" />
+    <char code="1053" x="638" y="79" w="28" h="78" dx="-3" dy="1" advx="25" />
+    <char code="1054" x="666" y="79" w="32" h="78" dx="-2" dy="1" advx="28" />
+    <char code="1055" x="698" y="79" w="29" h="78" dx="-3" dy="2" advx="24" />
+    <char code="1056" x="727" y="79" w="27" h="78" dx="-3" dy="1" advx="22" />
+    <char code="1057" x="754" y="79" w="28" h="78" dx="-2" dy="2" advx="22" />
+    <char code="1058" x="782" y="79" w="31" h="78" dx="-1" dy="0" advx="21" />
+    <char code="1059" x="813" y="79" w="31" h="78" dx="0" dy="2" advx="21" />
+    <char code="1060" x="844" y="79" w="32" h="78" dx="-2" dy="4" advx="27" />
+    <char code="1061" x="876" y="79" w="31" h="78" dx="0" dy="2" advx="23" />
+    <char code="1062" x="907" y="79" w="32" h="78" dx="-3" dy="6" advx="27" />
+    <char code="1063" x="939" y="79" w="28" h="78" dx="-3" dy="2" advx="25" />
+    <char code="1064" x="967" y="79" w="40" h="78" dx="-3" dy="1" advx="38" />
+    <char code="1065" x="1007" y="79" w="44" h="78" dx="-3" dy="6" advx="40" />
+    <char code="1066" x="1051" y="79" w="33" h="78" dx="0" dy="2" advx="26" />
+    <char code="1067" x="1084" y="79" w="33" h="78" dx="-3" dy="2" advx="30" />
+    <char code="1068" x="1117" y="79" w="27" h="78" dx="-3" dy="2" advx="23" />
+    <char code="1069" x="1144" y="79" w="26" h="78" dx="-1" dy="1" advx="21" />
+    <char code="1070" x="1170" y="79" w="37" h="78" dx="-2" dy="1" advx="31" />
+    <char code="1071" x="1207" y="79" w="30" h="78" dx="-1" dy="1" advx="23" />
+    <char code="1072" x="1237" y="79" w="24" h="78" dx="-1" dy="0" advx="18" />
+    <char code="1073" x="1261" y="79" w="24" h="78" dx="-2" dy="0" advx="16" />
+    <char code="1074" x="1285" y="79" w="22" h="78" dx="-2" dy="2" advx="16" />
+    <char code="1075" x="1307" y="79" w="21" h="78" dx="-1" dy="0" advx="15" />
+    <char code="1076" x="1328" y="79" w="23" h="78" dx="-2" dy="2" advx="16" />
+    <char code="1077" x="1351" y="79" w="22" h="78" dx="-2" dy="1" advx="16" />
+    <char code="1105" x="1373" y="79" w="22" h="78" dx="-2" dy="1" advx="16" />
+    <char code="1078" x="1395" y="79" w="33" h="78" dx="-1" dy="1" advx="27" />
+    <char code="1079" x="1428" y="79" w="21" h="78" dx="-1" dy="1" advx="15" />
+    <char code="1080" x="1449" y="79" w="24" h="78" dx="-2" dy="1" advx="19" />
+    <char code="1081" x="1473" y="79" w="24" h="78" dx="-2" dy="1" advx="19" />
+    <char code="1082" x="1497" y="79" w="24" h="78" dx="-2" dy="0" advx="18" />
+    <char code="1083" x="1521" y="79" w="26" h="78" dx="0" dy="1" advx="19" />
+    <char code="1084" x="1547" y="79" w="34" h="78" dx="-1" dy="1" advx="27" />
+    <char code="1085" x="1581" y="79" w="23" h="78" dx="-2" dy="1" advx="18" />
+    <char code="1086" x="1604" y="79" w="23" h="78" dx="-2" dy="2" advx="18" />
+    <char code="1087" x="1627" y="79" w="26" h="78" dx="-2" dy="0" advx="21" />
+    <char code="1088" x="1653" y="79" w="27" h="78" dx="0" dy="10" advx="20" />
+    <char code="1089" x="1680" y="79" w="21" h="78" dx="-1" dy="1" advx="16" />
+    <char code="1090" x="1701" y="79" w="36" h="78" dx="-3" dy="0" advx="32" />
+    <char code="1091" x="1737" y="79" w="24" h="78" dx="0" dy="9" advx="18" />
+    <char code="1092" x="1761" y="79" w="33" h="78" dx="-2" dy="10" advx="28" />
+    <char code="1093" x="1794" y="79" w="24" h="78" dx="0" dy="2" advx="17" />
+    <char code="1094" x="1818" y="79" w="24" h="78" dx="-2" dy="7" advx="18" />
+    <char code="1095" x="1842" y="79" w="22" h="78" dx="-2" dy="0" advx="17" />
+    <char code="1096" x="1864" y="79" w="33" h="78" dx="-2" dy="1" advx="28" />
+    <char code="1097" x="1897" y="79" w="35" h="78" dx="-2" dy="7" advx="29" />
+    <char code="1098" x="1932" y="79" w="27" h="78" dx="-1" dy="0" advx="21" />
+    <char code="1099" x="1959" y="79" w="28" h="78" dx="-2" dy="0" advx="23" />
+    <char code="1100" x="1987" y="79" w="22" h="78" dx="-2" dy="0" advx="17" />
+    <char code="1101" x="2009" y="79" w="22" h="78" dx="0" dy="0" advx="15" />
+    <char code="1102" x="2031" y="79" w="34" h="78" dx="-2" dy="0" advx="28" />
+    <char code="1103" x="2065" y="79" w="23" h="78" dx="0" dy="1" advx="16" />
+    <char code="260" x="2088" y="79" w="32" h="78" dx="0" dy="8" advx="24" />
+    <char code="261" x="2120" y="79" w="24" h="78" dx="-1" dy="8" advx="18" />
+    <char code="262" x="2144" y="79" w="32" h="78" dx="-2" dy="2" advx="22" />
+    <char code="263" x="2176" y="79" w="24" h="78" dx="-1" dy="1" advx="16" />
+    <char code="280" x="2200" y="79" w="27" h="78" dx="-2" dy="7" advx="21" />
+    <char code="281" x="2227" y="79" w="22" h="78" dx="-2" dy="6" advx="16" />
+    <char code="321" x="2249" y="79" w="27" h="78" dx="0" dy="0" advx="20" />
+    <char code="322" x="2276" y="79" w="23" h="78" dx="0" dy="1" advx="12" />
+    <char code="323" x="2299" y="79" w="29" h="78" dx="-3" dy="1" advx="25" />
+    <char code="324" x="2328" y="79" w="26" h="78" dx="-2" dy="0" advx="21" />
+    <char code="346" x="2354" y="79" w="27" h="78" dx="-1" dy="2" advx="20" />
+    <char code="347" x="2381" y="79" w="26" h="78" dx="0" dy="2" advx="13" />
+    <char code="377" x="2407" y="79" w="30" h="78" dx="-1" dy="1" advx="24" />
+    <char code="378" x="2437" y="79" w="27" h="78" dx="1" dy="1" advx="16" />
+    <char code="379" x="2464" y="79" w="30" h="78" dx="-1" dy="1" advx="24" />
+    <char code="380" x="2494" y="79" w="25" h="78" dx="1" dy="1" advx="16" />
+    <char c="І" code="1030" x="3000" y="79" w="13" h="78" dx="-3" dy="0" advx="10" />
+    <char c="Ї" code="1031" x="3100" y="79" w="17" h="78" dx="-3" dy="0" advx="10" />
+    <char c="Є" code="1028" x="3200" y="79" w="28" h="78" dx="-2" dy="2" advx="22" />
+    <char c="і" code="1110" x="3300" y="79" w="16" h="78" dx="-2" dy="0" advx="9" />
+    <char c="ї" code="1111" x="3400" y="79" w="17" h="78" dx="-2" dy="0" advx="9" />
+    <char c="є" code="1108" x="3500" y="79" w="21" h="78" dx="-1" dy="1" advx="16" />
+    <kerning c1="116" c2="108" offset="1" />
+</font>

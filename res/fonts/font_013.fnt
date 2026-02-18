@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<font FontName="Humanist531C UltraBlack BT" Description="crystal_font" CharFlag0="1" CharFlag1="1" CharFlag2="1" CharFlag3="1" CharFlag4="1" CharFlag5="1" CharFlag6="0" CharFlag7="0" CharFlag8="0" CharFlag9="0" CharFlag10="1" CharFlag11="1" CharFlag12="1" CharFlag13="1" CharFlag14="1" CharFlag15="1" charBorderLeft="3" charBorderRight="3" charBorderUp="3" charBorderDown="3" fontHeight="60" fontWidth="0" fontWeight="-10" charDx="0" lineDy="0" imgWidth="4086" imgHeight="200" spaceWidth="17">
+    <char c="A" code="65" x="1" y="1" w="49" h="66" dx="2" dy="0" advx="40" />
+    <char c="B" code="66" x="50" y="1" w="38" h="66" dx="-5" dy="0" advx="40" />
+    <char c="C" code="67" x="88" y="1" w="43" h="66" dx="-3" dy="1" advx="43" />
+    <char c="D" code="68" x="131" y="1" w="41" h="66" dx="-5" dy="0" advx="43" />
+    <char c="E" code="69" x="172" y="1" w="38" h="66" dx="-5" dy="0" advx="40" />
+    <char c="F" code="70" x="210" y="1" w="35" h="66" dx="-5" dy="0" advx="37" />
+    <char c="G" code="71" x="245" y="1" w="46" h="66" dx="-3" dy="1" advx="47" />
+    <char c="H" code="72" x="291" y="1" w="39" h="66" dx="-5" dy="0" advx="43" />
+    <char c="I" code="73" x="330" y="1" w="12" h="66" dx="-5" dy="0" advx="16" />
+    <char c="J" code="74" x="342" y="1" w="30" h="66" dx="-1" dy="1" advx="30" />
+    <char c="K" code="75" x="372" y="1" w="42" h="66" dx="-5" dy="0" advx="40" />
+    <char c="L" code="76" x="414" y="1" w="32" h="66" dx="-5" dy="0" advx="33" />
+    <char c="M" code="77" x="446" y="1" w="47" h="66" dx="-4" dy="0" advx="49" />
+    <char c="N" code="78" x="493" y="1" w="39" h="66" dx="-5" dy="0" advx="43" />
+    <char c="O" code="79" x="532" y="1" w="47" h="66" dx="-3" dy="1" advx="47" />
+    <char c="P" code="80" x="579" y="1" w="38" h="66" dx="-5" dy="0" advx="40" />
+    <char c="Q" code="81" x="617" y="1" w="47" h="66" dx="-3" dy="4" advx="47" />
+    <char c="R" code="82" x="664" y="1" w="43" h="66" dx="-5" dy="0" advx="43" />
+    <char c="S" code="83" x="707" y="1" w="40" h="66" dx="-3" dy="1" advx="40" />
+    <char c="T" code="84" x="747" y="1" w="40" h="66" dx="-2" dy="0" advx="38" />
+    <char c="U" code="85" x="787" y="1" w="39" h="66" dx="-5" dy="1" advx="43" />
+    <char c="V" code="86" x="826" y="1" w="49" h="66" dx="1" dy="0" advx="40" />
+    <char c="W" code="87" x="875" y="1" w="65" h="66" dx="-1" dy="0" advx="60" />
+    <char c="X" code="88" x="940" y="1" w="45" h="66" dx="0" dy="0" advx="39" />
+    <char c="Y" code="89" x="985" y="1" w="46" h="66" dx="0" dy="0" advx="40" />
+    <char c="Z" code="90" x="1031" y="1" w="40" h="66" dx="-1" dy="0" advx="37" />
+    <char code="536" x="1071" y="1" w="40" h="66" dx="-3" dy="16" advx="40" />
+    <char code="538" x="1111" y="1" w="40" h="66" dx="-2" dy="15" advx="38" />
+    <char code="258" x="1151" y="1" w="49" h="66" dx="2" dy="0" advx="40" />
+    <char code="206" x="1200" y="1" w="24" h="66" dx="1" dy="0" advx="17" />
+    <char code="194" x="1224" y="1" w="49" h="66" dx="2" dy="0" advx="40" />
+    <char c="a" code="97" x="1273" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char c="b" code="98" x="1308" y="1" w="33" h="66" dx="-4" dy="1" advx="33" />
+    <char c="c" code="99" x="1341" y="1" w="34" h="66" dx="-2" dy="1" advx="30" />
+    <char c="d" code="100" x="1375" y="1" w="33" h="66" dx="-2" dy="1" advx="33" />
+    <char c="e" code="101" x="1408" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char c="f" code="102" x="1443" y="1" w="25" h="66" dx="-1" dy="0" advx="17" />
+    <char c="g" code="103" x="1468" y="1" w="33" h="66" dx="-2" dy="12" advx="33" />
+    <char c="h" code="104" x="1501" y="1" w="31" h="66" dx="-4" dy="0" advx="33" />
+    <char c="i" code="105" x="1532" y="1" w="11" h="66" dx="-4" dy="0" advx="13" />
+    <char c="j" code="106" x="1543" y="1" w="18" h="66" dx="3" dy="12" advx="13" />
+    <char c="k" code="107" x="1561" y="1" w="32" h="66" dx="-4" dy="0" advx="31" />
+    <char c="l" code="108" x="1593" y="1" w="11" h="66" dx="-4" dy="0" advx="13" />
+    <char c="m" code="109" x="1604" y="1" w="47" h="66" dx="-4" dy="0" advx="49" />
+    <char c="n" code="110" x="1651" y="1" w="31" h="66" dx="-4" dy="0" advx="33" />
+    <char c="o" code="111" x="1682" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char c="p" code="112" x="1717" y="1" w="33" h="66" dx="-4" dy="12" advx="33" />
+    <char c="q" code="113" x="1750" y="1" w="33" h="66" dx="-2" dy="12" advx="33" />
+    <char c="r" code="114" x="1783" y="1" w="23" h="66" dx="-4" dy="0" advx="20" />
+    <char c="s" code="115" x="1806" y="1" w="32" h="66" dx="-2" dy="1" advx="30" />
+    <char c="t" code="116" x="1838" y="1" w="21" h="66" dx="-1" dy="1" advx="17" />
+    <char c="u" code="117" x="1859" y="1" w="31" h="66" dx="-4" dy="1" advx="33" />
+    <char c="v" code="118" x="1890" y="1" w="35" h="66" dx="-1" dy="0" advx="31" />
+    <char c="w" code="119" x="1925" y="1" w="51" h="66" dx="1" dy="0" advx="43" />
+    <char c="x" code="120" x="1976" y="1" w="37" h="66" dx="0" dy="0" advx="30" />
+    <char c="y" code="121" x="2013" y="1" w="34" h="66" dx="-1" dy="12" advx="29" />
+    <char c="z" code="122" x="2047" y="1" w="33" h="66" dx="-1" dy="0" advx="29" />
+    <char code="537" x="2080" y="1" w="32" h="66" dx="-2" dy="16" advx="30" />
+    <char code="539" x="2112" y="1" w="21" h="66" dx="-1" dy="16" advx="16" />
+    <char code="259" x="2133" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="238" x="2168" y="1" w="24" h="66" dx="0" dy="0" advx="17" />
+    <char code="226" x="2192" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char c="!" code="33" x="2227" y="1" w="11" h="66" dx="-7" dy="0" advx="19" />
+    <char c="&quot;" code="34" x="2238" y="1" w="22" h="66" dx="-2" dy="-27" advx="21" />
+    <char c="#" code="35" x="2260" y="1" w="39" h="66" dx="0" dy="0" advx="33" />
+    <char c="$" code="36" x="2299" y="1" w="34" h="66" dx="-2" dy="5" advx="33" />
+    <char c="%" code="37" x="2333" y="1" w="52" h="66" dx="-3" dy="1" advx="53" />
+    <char c="&amp;" code="38" x="2385" y="1" w="42" h="66" dx="-3" dy="1" advx="40" />
+    <char c="&apos;" code="39" x="2427" y="1" w="11" h="66" dx="-3" dy="-27" advx="11" />
+    <char c="(" code="40" x="2438" y="1" w="20" h="66" dx="-4" dy="12" advx="20" />
+    <char c=")" code="41" x="2458" y="1" w="20" h="66" dx="-2" dy="12" advx="20" />
+    <char c="*" code="42" x="2478" y="1" w="26" h="66" dx="-2" dy="-24" advx="23" />
+    <char c="+" code="43" x="2504" y="1" w="35" h="66" dx="-3" dy="-5" advx="35" />
+    <char c="," code="44" x="2539" y="1" w="11" h="66" dx="-5" dy="9" advx="17" />
+    <char c="-" code="45" x="2550" y="1" w="22" h="66" dx="-2" dy="-12" advx="20" />
+    <char c="." code="46" x="2572" y="1" w="11" h="66" dx="-5" dy="0" advx="17" />
+    <char c="/" code="47" x="2583" y="1" w="24" h="66" dx="0" dy="0" advx="17" />
+    <char c=":" code="58" x="2607" y="1" w="11" h="66" dx="-5" dy="0" advx="17" />
+    <char c=";" code="59" x="2618" y="1" w="11" h="66" dx="-5" dy="9" advx="17" />
+    <char c="&lt;" code="60" x="2629" y="1" w="34" h="66" dx="-3" dy="-6" advx="35" />
+    <char c="=" code="61" x="2663" y="1" w="34" h="66" dx="-3" dy="-11" advx="35" />
+    <char c="&gt;" code="62" x="2697" y="1" w="34" h="66" dx="-3" dy="-6" advx="35" />
+    <char c="?" code="63" x="2731" y="1" w="33" h="66" dx="-3" dy="0" advx="33" />
+    <char c="@" code="64" x="2764" y="1" w="61" h="66" dx="-3" dy="13" advx="61" />
+    <char c="[" code="91" x="2825" y="1" w="17" h="66" dx="-4" dy="12" advx="17" />
+    <char c="\" code="92" x="2842" y="1" w="24" h="66" dx="1" dy="0" advx="17" />
+    <char c="]" code="93" x="2866" y="1" w="17" h="66" dx="-2" dy="12" advx="17" />
+    <char c="^" code="94" x="2883" y="1" w="30" h="66" dx="-1" dy="-20" advx="26" />
+    <char c="_" code="95" x="2913" y="1" w="40" h="66" dx="1" dy="12" advx="33" />
+    <char c="`" code="96" x="2953" y="1" w="17" h="66" dx="-3" dy="-34" advx="20" />
+    <char code="123" x="2970" y="1" w="23" h="66" dx="-1" dy="12" advx="20" />
+    <char code="124" x="2993" y="1" w="11" h="66" dx="-5" dy="13" advx="15" />
+    <char code="125" x="3004" y="1" w="23" h="66" dx="-2" dy="12" advx="20" />
+    <char code="126" x="3027" y="1" w="36" h="66" dx="-3" dy="-14" advx="35" />
+    <char c="0" code="48" x="3063" y="1" w="33" h="66" dx="-3" dy="0" advx="33" />
+    <char c="1" code="49" x="3096" y="1" w="21" h="66" dx="-7" dy="0" advx="33" />
+    <char c="2" code="50" x="3117" y="1" w="35" h="66" dx="-1" dy="0" advx="33" />
+    <char c="3" code="51" x="3152" y="1" w="33" h="66" dx="-3" dy="0" advx="33" />
+    <char c="4" code="52" x="3185" y="1" w="35" h="66" dx="-1" dy="0" advx="33" />
+    <char c="5" code="53" x="3220" y="1" w="33" h="66" dx="-3" dy="0" advx="33" />
+    <char c="6" code="54" x="3253" y="1" w="34" h="66" dx="-2" dy="0" advx="33" />
+    <char c="7" code="55" x="3287" y="1" w="33" h="66" dx="-3" dy="0" advx="33" />
+    <char c="8" code="56" x="3320" y="1" w="33" h="66" dx="-3" dy="0" advx="33" />
+    <char c="9" code="57" x="3353" y="1" w="33" h="66" dx="-3" dy="0" advx="33" />
+    <char code="199" x="3386" y="1" w="43" h="66" dx="-3" dy="13" advx="43" />
+    <char code="252" x="3429" y="1" w="31" h="66" dx="-4" dy="1" advx="33" />
+    <char code="233" x="3460" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="228" x="3495" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="224" x="3530" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="229" x="3565" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="231" x="3600" y="1" w="34" h="66" dx="-2" dy="13" advx="30" />
+    <char code="234" x="3634" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="235" x="3669" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="232" x="3704" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="239" x="3739" y="1" w="21" h="66" dx="-1" dy="0" advx="17" />
+    <char code="236" x="3760" y="1" w="17" h="66" dx="-1" dy="0" advx="17" />
+    <char code="196" x="3777" y="1" w="49" h="66" dx="2" dy="0" advx="40" />
+    <char code="197" x="3826" y="1" w="49" h="66" dx="2" dy="0" advx="40" />
+    <char code="201" x="3875" y="1" w="38" h="66" dx="-5" dy="0" advx="40" />
+    <char code="230" x="3913" y="1" w="55" h="66" dx="-2" dy="1" advx="53" />
+    <char code="198" x="3968" y="1" w="64" h="66" dx="1" dy="0" advx="60" />
+    <char code="244" x="4032" y="1" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="246" x="1" y="67" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="242" x="36" y="67" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="251" x="71" y="67" w="31" h="66" dx="-4" dy="1" advx="33" />
+    <char code="249" x="102" y="67" w="31" h="66" dx="-4" dy="1" advx="33" />
+    <char code="255" x="133" y="67" w="34" h="66" dx="-1" dy="12" advx="30" />
+    <char code="214" x="167" y="67" w="47" h="66" dx="-3" dy="1" advx="47" />
+    <char code="220" x="214" y="67" w="39" h="66" dx="-5" dy="1" advx="43" />
+    <char code="248" x="253" y="67" w="36" h="66" dx="-3" dy="3" advx="37" />
+    <char code="163" x="289" y="67" w="37" h="66" dx="0" dy="1" advx="33" />
+    <char code="216" x="326" y="67" w="49" h="66" dx="-2" dy="3" advx="47" />
+    <char code="215" x="375" y="67" w="33" h="66" dx="-4" dy="-7" advx="35" />
+    <char code="402" x="408" y="67" w="37" h="66" dx="-1" dy="12" advx="33" />
+    <char code="225" x="445" y="67" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="237" x="480" y="67" w="17" h="66" dx="-5" dy="0" advx="17" />
+    <char code="243" x="497" y="67" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="250" x="532" y="67" w="31" h="66" dx="-4" dy="1" advx="33" />
+    <char code="241" x="563" y="67" w="31" h="66" dx="-4" dy="0" advx="33" />
+    <char code="209" x="594" y="67" w="39" h="66" dx="-5" dy="0" advx="43" />
+    <char code="191" x="633" y="67" w="34" h="66" dx="-5" dy="12" advx="37" />
+    <char code="174" x="667" y="67" w="50" h="66" dx="0" dy="1" advx="44" />
+    <char code="161" x="717" y="67" w="11" h="66" dx="-7" dy="12" advx="19" />
+    <char code="193" x="728" y="67" w="49" h="66" dx="2" dy="0" advx="40" />
+    <char code="192" x="777" y="67" w="49" h="66" dx="2" dy="0" advx="40" />
+    <char code="169" x="826" y="67" w="50" h="66" dx="0" dy="1" advx="44" />
+    <char code="227" x="876" y="67" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="195" x="911" y="67" w="49" h="66" dx="2" dy="0" advx="40" />
+    <char code="208" x="960" y="67" w="46" h="66" dx="0" dy="0" advx="43" />
+    <char code="202" x="1006" y="67" w="38" h="66" dx="-5" dy="0" advx="40" />
+    <char code="203" x="1044" y="67" w="38" h="66" dx="-5" dy="0" advx="40" />
+    <char code="200" x="1082" y="67" w="38" h="66" dx="-5" dy="0" advx="40" />
+    <char code="305" x="1120" y="67" w="11" h="66" dx="-6" dy="0" advx="17" />
+    <char code="205" x="1131" y="67" w="17" h="66" dx="-4" dy="0" advx="17" />
+    <char code="207" x="1148" y="67" w="21" h="66" dx="-1" dy="0" advx="17" />
+    <char code="204" x="1169" y="67" w="17" h="66" dx="-1" dy="0" advx="17" />
+    <char code="211" x="1186" y="67" w="47" h="66" dx="-3" dy="1" advx="47" />
+    <char code="223" x="1233" y="67" w="36" h="66" dx="-5" dy="1" advx="37" />
+    <char code="212" x="1269" y="67" w="47" h="66" dx="-3" dy="1" advx="47" />
+    <char code="210" x="1316" y="67" w="47" h="66" dx="-3" dy="1" advx="47" />
+    <char code="245" x="1363" y="67" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="213" x="1398" y="67" w="47" h="66" dx="-3" dy="1" advx="47" />
+    <char code="181" x="1445" y="67" w="32" h="66" dx="-5" dy="12" advx="35" />
+    <char code="254" x="1477" y="67" w="33" h="66" dx="-4" dy="12" advx="33" />
+    <char code="222" x="1510" y="67" w="38" h="66" dx="-5" dy="0" advx="40" />
+    <char code="218" x="1548" y="67" w="39" h="66" dx="-5" dy="1" advx="43" />
+    <char code="219" x="1587" y="67" w="39" h="66" dx="-5" dy="1" advx="43" />
+    <char code="217" x="1626" y="67" w="39" h="66" dx="-5" dy="1" advx="43" />
+    <char code="253" x="1665" y="67" w="34" h="66" dx="-1" dy="12" advx="30" />
+    <char code="221" x="1699" y="67" w="46" h="66" dx="0" dy="0" advx="40" />
+    <char code="1040" x="1745" y="67" w="49" h="66" dx="2" dy="0" advx="40" />
+    <char code="1041" x="1794" y="67" w="38" h="66" dx="-5" dy="0" advx="39" />
+    <char code="1042" x="1832" y="67" w="38" h="66" dx="-5" dy="0" advx="40" />
+    <char code="1043" x="1870" y="67" w="33" h="66" dx="-5" dy="0" advx="32" />
+    <char code="1044" x="1903" y="67" w="45" h="66" dx="0" dy="10" advx="41" />
+    <char code="1045" x="1948" y="67" w="38" h="66" dx="-5" dy="0" advx="40" />
+    <char code="1025" x="1986" y="67" w="38" h="66" dx="-5" dy="0" advx="40" />
+    <char code="1046" x="2024" y="67" w="63" h="66" dx="1" dy="0" advx="55" />
+    <char code="1047" x="2087" y="67" w="37" h="66" dx="-2" dy="1" advx="36" />
+    <char code="1048" x="2124" y="67" w="39" h="66" dx="-5" dy="0" advx="43" />
+    <char code="1049" x="2163" y="67" w="39" h="66" dx="-5" dy="0" advx="43" />
+    <char code="1050" x="2202" y="67" w="36" h="66" dx="-5" dy="0" advx="35" />
+    <char code="1051" x="2238" y="67" w="39" h="66" dx="-1" dy="1" advx="39" />
+    <char code="1052" x="2277" y="67" w="47" h="66" dx="-4" dy="0" advx="49" />
+    <char code="1053" x="2324" y="67" w="39" h="66" dx="-5" dy="0" advx="43" />
+    <char code="1054" x="2363" y="67" w="47" h="66" dx="-3" dy="1" advx="47" />
+    <char code="1055" x="2410" y="67" w="39" h="66" dx="-5" dy="0" advx="43" />
+    <char code="1056" x="2449" y="67" w="38" h="66" dx="-5" dy="0" advx="40" />
+    <char code="1057" x="2487" y="67" w="43" h="66" dx="-3" dy="1" advx="43" />
+    <char code="1058" x="2530" y="67" w="40" h="66" dx="-2" dy="0" advx="38" />
+    <char code="1059" x="2570" y="67" w="43" h="66" dx="-1" dy="1" advx="38" />
+    <char code="1060" x="2613" y="67" w="47" h="66" dx="-2" dy="0" advx="46" />
+    <char code="1061" x="2660" y="67" w="45" h="66" dx="0" dy="0" advx="39" />
+    <char code="1062" x="2705" y="67" w="43" h="66" dx="-5" dy="12" advx="44" />
+    <char code="1063" x="2748" y="67" w="36" h="66" dx="-5" dy="0" advx="40" />
+    <char code="1064" x="2784" y="67" w="52" h="66" dx="-5" dy="0" advx="55" />
+    <char code="1065" x="2836" y="67" w="56" h="66" dx="-5" dy="12" advx="56" />
+    <char code="1066" x="2892" y="67" w="51" h="66" dx="0" dy="0" advx="47" />
+    <char code="1067" x="2943" y="67" w="49" h="66" dx="-5" dy="0" advx="53" />
+    <char code="1068" x="2992" y="67" w="38" h="66" dx="-5" dy="0" advx="39" />
+    <char code="1069" x="3030" y="67" w="44" h="66" dx="-3" dy="1" advx="43" />
+    <char code="1070" x="3074" y="67" w="59" h="66" dx="-5" dy="1" advx="61" />
+    <char code="1071" x="3133" y="67" w="43" h="66" dx="-1" dy="0" advx="43" />
+    <char code="1072" x="3176" y="67" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="1073" x="3211" y="67" w="36" h="66" dx="-2" dy="1" advx="34" />
+    <char code="1074" x="3247" y="67" w="32" h="66" dx="-4" dy="0" advx="32" />
+    <char code="1075" x="3279" y="67" w="24" h="66" dx="-4" dy="0" advx="22" />
+    <char code="1076" x="3303" y="67" w="37" h="66" dx="0" dy="9" advx="35" />
+    <char code="1077" x="3340" y="67" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="1105" x="3375" y="67" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="1078" x="3410" y="67" w="47" h="66" dx="0" dy="0" advx="40" />
+    <char code="1079" x="3457" y="67" w="30" h="66" dx="-2" dy="1" advx="28" />
+    <char code="1080" x="3487" y="67" w="32" h="66" dx="-4" dy="0" advx="34" />
+    <char code="1081" x="3519" y="67" w="32" h="66" dx="-4" dy="0" advx="34" />
+    <char code="1082" x="3551" y="67" w="28" h="66" dx="-4" dy="0" advx="26" />
+    <char code="1083" x="3579" y="67" w="36" h="66" dx="-1" dy="0" advx="35" />
+    <char code="1084" x="3615" y="67" w="39" h="66" dx="-4" dy="0" advx="41" />
+    <char code="1085" x="3654" y="67" w="31" h="66" dx="-4" dy="0" advx="33" />
+    <char code="1086" x="3685" y="67" w="35" h="66" dx="-2" dy="1" advx="33" />
+    <char code="1087" x="3720" y="67" w="30" h="66" dx="-4" dy="0" advx="32" />
+    <char code="1088" x="3750" y="67" w="33" h="66" dx="-4" dy="12" advx="33" />
+    <char code="1089" x="3783" y="67" w="34" h="66" dx="-2" dy="1" advx="30" />
+    <char code="1090" x="3817" y="67" w="33" h="66" dx="0" dy="0" advx="27" />
+    <char code="1091" x="3850" y="67" w="34" h="66" dx="-1" dy="12" advx="29" />
+    <char code="1092" x="3884" y="67" w="51" h="66" dx="-2" dy="12" advx="49" />
+    <char code="1093" x="3935" y="67" w="37" h="66" dx="0" dy="0" advx="30" />
+    <char code="1094" x="3972" y="67" w="35" h="66" dx="-4" dy="9" advx="34" />
+    <char code="1095" x="4007" y="67" w="31" h="66" dx="-2" dy="0" advx="31" />
+    <char code="1096" x="4038" y="67" w="47" h="66" dx="-4" dy="0" advx="48" />
+    <char code="1097" x="1" y="133" w="50" h="66" dx="-4" dy="9" advx="49" />
+    <char code="1098" x="51" y="133" w="40" h="66" dx="-2" dy="0" advx="38" />
+    <char code="1099" x="91" y="133" w="41" h="66" dx="-4" dy="0" advx="43" />
+    <char code="1100" x="132" y="133" w="31" h="66" dx="-4" dy="0" advx="31" />
+    <char code="1101" x="163" y="133" w="34" h="66" dx="-2" dy="2" advx="31" />
+    <char code="1102" x="197" y="133" w="45" h="66" dx="-4" dy="1" advx="45" />
+    <char code="1103" x="242" y="133" w="34" h="66" dx="0" dy="0" advx="32" />
+    <char code="260" x="276" y="133" w="50" h="66" dx="2" dy="12" advx="40" />
+    <char code="261" x="326" y="133" w="37" h="66" dx="-2" dy="12" advx="33" />
+    <char code="262" x="363" y="133" w="43" h="66" dx="-3" dy="1" advx="43" />
+    <char code="263" x="406" y="133" w="34" h="66" dx="-2" dy="1" advx="30" />
+    <char code="280" x="440" y="133" w="38" h="66" dx="-5" dy="12" advx="40" />
+    <char code="281" x="478" y="133" w="35" h="66" dx="-2" dy="12" advx="33" />
+    <char code="321" x="513" y="133" w="37" h="66" dx="0" dy="0" advx="33" />
+    <char code="322" x="550" y="133" w="19" h="66" dx="0" dy="0" advx="13" />
+    <char code="323" x="569" y="133" w="39" h="66" dx="-5" dy="0" advx="43" />
+    <char code="324" x="608" y="133" w="31" h="66" dx="-4" dy="0" advx="33" />
+    <char code="346" x="639" y="133" w="40" h="66" dx="-3" dy="1" advx="40" />
+    <char code="347" x="679" y="133" w="32" h="66" dx="-2" dy="1" advx="30" />
+    <char code="377" x="711" y="133" w="40" h="66" dx="-1" dy="0" advx="37" />
+    <char code="378" x="751" y="133" w="33" h="66" dx="-1" dy="0" advx="29" />
+    <char code="379" x="784" y="133" w="40" h="66" dx="-1" dy="0" advx="37" />
+    <char code="380" x="824" y="133" w="33" h="66" dx="-1" dy="0" advx="29" />
+    <char c="І" code="1030" x="1000" y="133" w="12" h="66" dx="-5" dy="0" advx="16" />
+    <char c="Ї" code="1031" x="1100" y="133" w="21" h="66" dx="-1" dy="0" advx="17" />
+    <char c="Є" code="1028" x="1200" y="133" w="43" h="66" dx="-3" dy="1" advx="43" />
+    <char c="і" code="1110" x="1300" y="133" w="11" h="66" dx="-4" dy="0" advx="13" />
+    <char c="ї" code="1111" x="1400" y="133" w="21" h="66" dx="-1" dy="0" advx="17" />
+    <char c="є" code="1108" x="1500" y="133" w="34" h="66" dx="-2" dy="1" advx="30" />
+    <kerning c1="32" c2="65" offset="-3" />
+    <kerning c1="32" c2="84" offset="-1" />
+    <kerning c1="32" c2="89" offset="-1" />
+    <kerning c1="49" c2="49" offset="-4" />
+    <kerning c1="65" c2="32" offset="-3" />
+    <kerning c1="65" c2="84" offset="-4" />
+    <kerning c1="65" c2="86" offset="-4" />
+    <kerning c1="65" c2="87" offset="-2" />
+    <kerning c1="65" c2="89" offset="-4" />
+    <kerning c1="65" c2="118" offset="-1" />
+    <kerning c1="65" c2="119" offset="-1" />
+    <kerning c1="65" c2="121" offset="-1" />
+    <kerning c1="65" c2="146" offset="-4" />
+    <kerning c1="70" c2="44" offset="-7" />
+    <kerning c1="70" c2="46" offset="-7" />
+    <kerning c1="70" c2="65" offset="-3" />
+    <kerning c1="76" c2="32" offset="-2" />
+    <kerning c1="76" c2="84" offset="-4" />
+    <kerning c1="76" c2="86" offset="-4" />
+    <kerning c1="76" c2="87" offset="-4" />
+    <kerning c1="76" c2="89" offset="-4" />
+    <kerning c1="76" c2="121" offset="-2" />
+    <kerning c1="76" c2="146" offset="-3" />
+    <kerning c1="80" c2="32" offset="-1" />
+    <kerning c1="80" c2="44" offset="-8" />
+    <kerning c1="80" c2="46" offset="-8" />
+    <kerning c1="80" c2="65" offset="-4" />
+    <kerning c1="82" c2="84" offset="-1" />
+    <kerning c1="82" c2="86" offset="-1" />
+    <kerning c1="82" c2="87" offset="-1" />
+    <kerning c1="82" c2="89" offset="-1" />
+    <kerning c1="84" c2="32" offset="-1" />
+    <kerning c1="84" c2="44" offset="-7" />
+    <kerning c1="84" c2="45" offset="-3" />
+    <kerning c1="84" c2="46" offset="-7" />
+    <kerning c1="84" c2="58" offset="-7" />
+    <kerning c1="84" c2="65" offset="-4" />
+    <kerning c1="84" c2="79" offset="-1" />
+    <kerning c1="84" c2="97" offset="-7" />
+    <kerning c1="84" c2="99" offset="-7" />
+    <kerning c1="84" c2="101" offset="-7" />
+    <kerning c1="84" c2="105" offset="-2" />
+    <kerning c1="84" c2="111" offset="-7" />
+    <kerning c1="84" c2="114" offset="-2" />
+    <kerning c1="84" c2="115" offset="-7" />
+    <kerning c1="84" c2="117" offset="-2" />
+    <kerning c1="84" c2="119" offset="-3" />
+    <kerning c1="84" c2="121" offset="-3" />
+    <kerning c1="86" c2="44" offset="-6" />
+    <kerning c1="86" c2="45" offset="-3" />
+    <kerning c1="86" c2="46" offset="-6" />
+    <kerning c1="86" c2="58" offset="-2" />
+    <kerning c1="86" c2="65" offset="-4" />
+    <kerning c1="86" c2="97" offset="-4" />
+    <kerning c1="86" c2="101" offset="-3" />
+    <kerning c1="86" c2="105" offset="-1" />
+    <kerning c1="86" c2="111" offset="-3" />
+    <kerning c1="86" c2="114" offset="-2" />
+    <kerning c1="86" c2="117" offset="-2" />
+    <kerning c1="86" c2="121" offset="-2" />
+    <kerning c1="87" c2="44" offset="-3" />
+    <kerning c1="87" c2="45" offset="-1" />
+    <kerning c1="87" c2="46" offset="-3" />
+    <kerning c1="87" c2="58" offset="-1" />
+    <kerning c1="87" c2="65" offset="-2" />
+    <kerning c1="87" c2="97" offset="-2" />
+    <kerning c1="87" c2="101" offset="-1" />
+    <kerning c1="87" c2="111" offset="-1" />
+    <kerning c1="87" c2="114" offset="-1" />
+    <kerning c1="87" c2="117" offset="-1" />
+    <kerning c1="87" c2="121" offset="-1" />
+    <kerning c1="89" c2="32" offset="-1" />
+    <kerning c1="89" c2="44" offset="-8" />
+    <kerning c1="89" c2="45" offset="-6" />
+    <kerning c1="89" c2="46" offset="-8" />
+    <kerning c1="89" c2="58" offset="-3" />
+    <kerning c1="89" c2="65" offset="-4" />
+    <kerning c1="89" c2="97" offset="-4" />
+    <kerning c1="89" c2="101" offset="-6" />
+    <kerning c1="89" c2="105" offset="-2" />
+    <kerning c1="89" c2="111" offset="-6" />
+    <kerning c1="89" c2="112" offset="-4" />
+    <kerning c1="89" c2="113" offset="-6" />
+    <kerning c1="89" c2="117" offset="-3" />
+    <kerning c1="89" c2="118" offset="-3" />
+    <kerning c1="102" c2="102" offset="-1" />
+    <kerning c1="102" c2="146" offset="1" />
+    <kerning c1="114" c2="44" offset="-3" />
+    <kerning c1="114" c2="46" offset="-3" />
+    <kerning c1="114" c2="146" offset="2" />
+    <kerning c1="118" c2="44" offset="-4" />
+    <kerning c1="118" c2="46" offset="-4" />
+    <kerning c1="119" c2="44" offset="-3" />
+    <kerning c1="119" c2="46" offset="-3" />
+    <kerning c1="121" c2="44" offset="-4" />
+    <kerning c1="121" c2="46" offset="-4" />
+    <kerning c1="129" c2="44" offset="-7" />
+    <kerning c1="129" c2="46" offset="-7" />
+    <kerning c1="129" c2="151" offset="-1" />
+    <kerning c1="129" c2="171" offset="-4" />
+    <kerning c1="129" c2="187" offset="-4" />
+    <kerning c1="132" c2="128" offset="-5" />
+    <kerning c1="132" c2="142" offset="-5" />
+    <kerning c1="132" c2="210" offset="-5" />
+    <kerning c1="132" c2="215" offset="-2" />
+    <kerning c1="132" c2="218" offset="-2" />
+    <kerning c1="138" c2="146" offset="-5" />
+    <kerning c1="140" c2="146" offset="-4" />
+    <kerning c1="145" c2="145" offset="-1" />
+    <kerning c1="146" c2="32" offset="-2" />
+    <kerning c1="146" c2="115" offset="-1" />
+    <kerning c1="146" c2="146" offset="-1" />
+    <kerning c1="162" c2="44" offset="-6" />
+    <kerning c1="162" c2="46" offset="-6" />
+    <kerning c1="165" c2="44" offset="-7" />
+    <kerning c1="165" c2="46" offset="-7" />
+    <kerning c1="165" c2="58" offset="-1" />
+    <kerning c1="165" c2="151" offset="-1" />
+    <kerning c1="165" c2="171" offset="-5" />
+    <kerning c1="165" c2="187" offset="-5" />
+    <kerning c1="192" c2="146" offset="-3" />
+    <kerning c1="192" c2="196" offset="2" />
+    <kerning c1="192" c2="199" offset="-1" />
+    <kerning c1="192" c2="203" offset="1" />
+    <kerning c1="192" c2="206" offset="-1" />
+    <kerning c1="192" c2="207" offset="-1" />
+    <kerning c1="192" c2="209" offset="-1" />
+    <kerning c1="192" c2="210" offset="-5" />
+    <kerning c1="192" c2="211" offset="-3" />
+    <kerning c1="192" c2="212" offset="-2" />
+    <kerning c1="192" c2="215" offset="-5" />
+    <kerning c1="192" c2="221" offset="-1" />
+    <kerning c1="192" c2="224" offset="1" />
+    <kerning c1="192" c2="242" offset="-1" />
+    <kerning c1="192" c2="243" offset="-1" />
+    <kerning c1="192" c2="244" offset="1" />
+    <kerning c1="192" c2="253" offset="1" />
+    <kerning c1="193" c2="192" offset="-1" />
+    <kerning c1="193" c2="199" offset="-1" />
+    <kerning c1="193" c2="206" offset="-1" />
+    <kerning c1="193" c2="209" offset="-1" />
+    <kerning c1="193" c2="210" offset="-3" />
+    <kerning c1="193" c2="211" offset="-1" />
+    <kerning c1="193" c2="212" offset="-1" />
+    <kerning c1="193" c2="213" offset="-1" />
+    <kerning c1="193" c2="215" offset="-3" />
+    <kerning c1="193" c2="218" offset="-2" />
+    <kerning c1="193" c2="221" offset="-1" />
+    <kerning c1="193" c2="223" offset="-1" />
+    <kerning c1="193" c2="235" offset="-1" />
+    <kerning c1="193" c2="243" offset="-1" />
+    <kerning c1="194" c2="192" offset="-2" />
+    <kerning c1="194" c2="196" offset="-1" />
+    <kerning c1="194" c2="198" offset="-1" />
+    <kerning c1="194" c2="199" offset="-2" />
+    <kerning c1="194" c2="203" offset="-1" />
+    <kerning c1="194" c2="206" offset="-2" />
+    <kerning c1="194" c2="209" offset="-2" />
+    <kerning c1="194" c2="210" offset="-4" />
+    <kerning c1="194" c2="211" offset="-2" />
+    <kerning c1="194" c2="212" offset="-2" />
+    <kerning c1="194" c2="213" offset="-3" />
+    <kerning c1="194" c2="215" offset="-3" />
+    <kerning c1="194" c2="218" offset="-3" />
+    <kerning c1="194" c2="223" offset="-2" />
+    <kerning c1="194" c2="228" offset="-1" />
+    <kerning c1="194" c2="236" offset="-1" />
+    <kerning c1="194" c2="242" offset="-2" />
+    <kerning c1="194" c2="243" offset="-1" />
+    <kerning c1="194" c2="245" offset="-1" />
+    <kerning c1="194" c2="247" offset="-2" />
+    <kerning c1="194" c2="255" offset="-1" />
+    <kerning c1="195" c2="44" offset="-7" />
+    <kerning c1="195" c2="46" offset="-7" />
+    <kerning c1="195" c2="151" offset="-1" />
+    <kerning c1="195" c2="171" offset="-4" />
+    <kerning c1="195" c2="187" offset="-4" />
+    <kerning c1="195" c2="192" offset="-4" />
+    <kerning c1="195" c2="196" offset="-4" />
+    <kerning c1="195" c2="199" offset="-1" />
+    <kerning c1="195" c2="203" offset="-3" />
+    <kerning c1="195" c2="204" offset="-1" />
+    <kerning c1="195" c2="206" offset="-3" />
+    <kerning c1="195" c2="209" offset="-3" />
+    <kerning c1="195" c2="223" offset="-2" />
+    <kerning c1="195" c2="224" offset="-3" />
+    <kerning c1="195" c2="226" offset="-3" />
+    <kerning c1="195" c2="228" offset="-4" />
+    <kerning c1="195" c2="229" offset="-4" />
+    <kerning c1="195" c2="232" offset="-3" />
+    <kerning c1="195" c2="235" offset="-3" />
+    <kerning c1="195" c2="236" offset="-3" />
+    <kerning c1="195" c2="237" offset="-3" />
+    <kerning c1="195" c2="238" offset="-4" />
+    <kerning c1="195" c2="240" offset="-3" />
+    <kerning c1="195" c2="243" offset="-4" />
+    <kerning c1="195" c2="251" offset="-3" />
+    <kerning c1="195" c2="252" offset="-3" />
+    <kerning c1="195" c2="254" offset="-3" />
+    <kerning c1="195" c2="255" offset="-4" />
+    <kerning c1="196" c2="211" offset="1" />
+    <kerning c1="196" c2="212" offset="-1" />
+    <kerning c1="196" c2="215" offset="-2" />
+    <kerning c1="196" c2="231" offset="2" />
+    <kerning c1="196" c2="238" offset="1" />
+    <kerning c1="196" c2="243" offset="1" />
+    <kerning c1="197" c2="199" offset="-1" />
+    <kerning c1="197" c2="241" offset="-1" />
+    <kerning c1="198" c2="199" offset="-1" />
+    <kerning c1="198" c2="206" offset="-1" />
+    <kerning c1="198" c2="209" offset="-1" />
+    <kerning c1="198" c2="210" offset="1" />
+    <kerning c1="198" c2="211" offset="1" />
+    <kerning c1="198" c2="218" offset="1" />
+    <kerning c1="198" c2="224" offset="1" />
+    <kerning c1="198" c2="229" offset="-1" />
+    <kerning c1="198" c2="238" offset="-1" />
+    <kerning c1="198" c2="243" offset="-1" />
+    <kerning c1="199" c2="203" offset="-1" />
+    <kerning c1="199" c2="206" offset="-1" />
+    <kerning c1="199" c2="209" offset="-1" />
+    <kerning c1="199" c2="210" offset="-1" />
+    <kerning c1="199" c2="211" offset="-1" />
+    <kerning c1="199" c2="212" offset="-1" />
+    <kerning c1="199" c2="215" offset="-1" />
+    <kerning c1="199" c2="223" offset="-1" />
+    <kerning c1="202" c2="199" offset="-1" />
+    <kerning c1="202" c2="206" offset="-1" />
+    <kerning c1="202" c2="209" offset="-1" />
+    <kerning c1="202" c2="211" offset="1" />
+    <kerning c1="202" c2="212" offset="-2" />
+    <kerning c1="203" c2="212" offset="-1" />
+    <kerning c1="203" c2="225" offset="1" />
+    <kerning c1="203" c2="243" offset="1" />
+    <kerning c1="204" c2="212" offset="-1" />
+    <kerning c1="204" c2="215" offset="-1" />
+    <kerning c1="204" c2="224" offset="1" />
+    <kerning c1="204" c2="229" offset="1" />
+    <kerning c1="204" c2="238" offset="1" />
+    <kerning c1="204" c2="241" offset="1" />
+    <kerning c1="204" c2="243" offset="1" />
+    <kerning c1="204" c2="247" offset="-1" />
+    <kerning c1="204" c2="253" offset="1" />
+    <kerning c1="206" c2="192" offset="-1" />
+    <kerning c1="206" c2="196" offset="-1" />
+    <kerning c1="206" c2="198" offset="-1" />
+    <kerning c1="206" c2="203" offset="-1" />
+    <kerning c1="206" c2="211" offset="-1" />
+    <kerning c1="206" c2="213" offset="-3" />
+    <kerning c1="206" c2="215" offset="-1" />
+    <kerning c1="206" c2="223" offset="-1" />
+    <kerning c1="206" c2="228" offset="-1" />
+    <kerning c1="206" c2="235" offset="-1" />
+    <kerning c1="206" c2="245" offset="-1" />
+    <kerning c1="208" c2="44" offset="-11" />
+    <kerning c1="208" c2="46" offset="-11" />
+    <kerning c1="208" c2="58" offset="-1" />
+    <kerning c1="208" c2="187" offset="-3" />
+    <kerning c1="208" c2="192" offset="-4" />
+    <kerning c1="208" c2="196" offset="-4" />
+    <kerning c1="208" c2="198" offset="-1" />
+    <kerning c1="208" c2="199" offset="-1" />
+    <kerning c1="208" c2="203" offset="-3" />
+    <kerning c1="208" c2="204" offset="-1" />
+    <kerning c1="208" c2="206" offset="-1" />
+    <kerning c1="208" c2="209" offset="-1" />
+    <kerning c1="208" c2="210" offset="-3" />
+    <kerning c1="208" c2="211" offset="-1" />
+    <kerning c1="208" c2="212" offset="-1" />
+    <kerning c1="208" c2="213" offset="-3" />
+    <kerning c1="208" c2="223" offset="-1" />
+    <kerning c1="208" c2="224" offset="-2" />
+    <kerning c1="208" c2="228" offset="-5" />
+    <kerning c1="208" c2="229" offset="-3" />
+    <kerning c1="208" c2="238" offset="-3" />
+    <kerning c1="208" c2="253" offset="-1" />
+    <kerning c1="208" c2="255" offset="-2" />
+    <kerning c1="209" c2="192" offset="-1" />
+    <kerning c1="209" c2="196" offset="-1" />
+    <kerning c1="209" c2="199" offset="-1" />
+    <kerning c1="209" c2="203" offset="-2" />
+    <kerning c1="209" c2="204" offset="-1" />
+    <kerning c1="209" c2="206" offset="-1" />
+    <kerning c1="209" c2="210" offset="-2" />
+    <kerning c1="209" c2="211" offset="-2" />
+    <kerning c1="209" c2="213" offset="-3" />
+    <kerning c1="209" c2="215" offset="-2" />
+    <kerning c1="209" c2="218" offset="-2" />
+    <kerning c1="209" c2="221" offset="-1" />
+    <kerning c1="209" c2="224" offset="1" />
+    <kerning c1="209" c2="230" offset="1" />
+    <kerning c1="209" c2="247" offset="-1" />
+    <kerning c1="210" c2="44" offset="-7" />
+    <kerning c1="210" c2="46" offset="-7" />
+    <kerning c1="210" c2="151" offset="-1" />
+    <kerning c1="210" c2="171" offset="-3" />
+    <kerning c1="210" c2="187" offset="-3" />
+    <kerning c1="210" c2="192" offset="-2" />
+    <kerning c1="210" c2="196" offset="-2" />
+    <kerning c1="210" c2="198" offset="1" />
+    <kerning c1="210" c2="199" offset="-1" />
+    <kerning c1="210" c2="203" offset="-1" />
+    <kerning c1="210" c2="206" offset="-3" />
+    <kerning c1="210" c2="212" offset="-2" />
+    <kerning c1="210" c2="223" offset="-1" />
+    <kerning c1="210" c2="224" offset="-3" />
+    <kerning c1="210" c2="226" offset="-3" />
+    <kerning c1="210" c2="229" offset="-3" />
+    <kerning c1="210" c2="232" offset="-3" />
+    <kerning c1="210" c2="234" offset="-3" />
+    <kerning c1="210" c2="235" offset="-3" />
+    <kerning c1="210" c2="236" offset="-3" />
+    <kerning c1="210" c2="238" offset="-5" />
+    <kerning c1="210" c2="239" offset="-3" />
+    <kerning c1="210" c2="240" offset="-3" />
+    <kerning c1="210" c2="241" offset="-3" />
+    <kerning c1="210" c2="243" offset="-3" />
+    <kerning c1="210" c2="245" offset="-3" />
+    <kerning c1="210" c2="249" offset="-3" />
+    <kerning c1="210" c2="251" offset="-3" />
+    <kerning c1="210" c2="252" offset="-3" />
+    <kerning c1="210" c2="254" offset="-3" />
+    <kerning c1="210" c2="255" offset="-3" />
+    <kerning c1="211" c2="44" offset="-8" />
+    <kerning c1="211" c2="46" offset="-8" />
+    <kerning c1="211" c2="58" offset="-1" />
+    <kerning c1="211" c2="151" offset="-1" />
+    <kerning c1="211" c2="171" offset="-3" />
+    <kerning c1="211" c2="187" offset="-3" />
+    <kerning c1="211" c2="192" offset="-4" />
+    <kerning c1="211" c2="196" offset="-3" />
+    <kerning c1="211" c2="199" offset="-1" />
+    <kerning c1="211" c2="203" offset="-2" />
+    <kerning c1="211" c2="206" offset="-2" />
+    <kerning c1="211" c2="212" offset="-2" />
+    <kerning c1="211" c2="221" offset="-1" />
+    <kerning c1="211" c2="223" offset="-1" />
+    <kerning c1="211" c2="225" offset="-1" />
+    <kerning c1="211" c2="226" offset="-3" />
+    <kerning c1="211" c2="227" offset="-3" />
+    <kerning c1="211" c2="228" offset="-5" />
+    <kerning c1="211" c2="229" offset="-4" />
+    <kerning c1="211" c2="230" offset="-2" />
+    <kerning c1="211" c2="231" offset="-3" />
+    <kerning c1="211" c2="232" offset="-3" />
+    <kerning c1="211" c2="233" offset="-2" />
+    <kerning c1="211" c2="234" offset="-3" />
+    <kerning c1="211" c2="235" offset="-4" />
+    <kerning c1="211" c2="236" offset="-3" />
+    <kerning c1="211" c2="237" offset="-3" />
+    <kerning c1="211" c2="238" offset="-4" />
+    <kerning c1="211" c2="239" offset="-3" />
+    <kerning c1="211" c2="240" offset="-3" />
+    <kerning c1="211" c2="241" offset="-4" />
+    <kerning c1="211" c2="245" offset="-3" />
+    <kerning c1="211" c2="246" offset="-3" />
+    <kerning c1="211" c2="248" offset="-3" />
+    <kerning c1="211" c2="249" offset="-3" />
+    <kerning c1="211" c2="254" offset="-3" />
+    <kerning c1="211" c2="255" offset="-4" />
+    <kerning c1="212" c2="192" offset="-1" />
+    <kerning c1="212" c2="196" offset="-2" />
+    <kerning c1="212" c2="203" offset="-2" />
+    <kerning c1="212" c2="210" offset="-3" />
+    <kerning c1="212" c2="211" offset="-3" />
+    <kerning c1="212" c2="215" offset="-1" />
+    <kerning c1="212" c2="223" offset="-2" />
+    <kerning c1="212" c2="235" offset="-2" />
+    <kerning c1="213" c2="199" offset="-1" />
+    <kerning c1="213" c2="206" offset="-2" />
+    <kerning c1="213" c2="209" offset="-2" />
+    <kerning c1="213" c2="212" offset="-2" />
+    <kerning c1="213" c2="221" offset="-2" />
+    <kerning c1="213" c2="238" offset="-1" />
+    <kerning c1="213" c2="243" offset="-1" />
+    <kerning c1="214" c2="206" offset="-1" />
+    <kerning c1="214" c2="224" offset="1" />
+    <kerning c1="217" c2="224" offset="1" />
+    <kerning c1="217" c2="243" offset="1" />
+    <kerning c1="218" c2="146" offset="-4" />
+    <kerning c1="218" c2="223" offset="-2" />
+    <kerning c1="220" c2="146" offset="-5" />
+    <kerning c1="220" c2="192" offset="-1" />
+    <kerning c1="220" c2="196" offset="-1" />
+    <kerning c1="220" c2="198" offset="-2" />
+    <kerning c1="220" c2="199" offset="-1" />
+    <kerning c1="220" c2="203" offset="-2" />
+    <kerning c1="220" c2="204" offset="-1" />
+    <kerning c1="220" c2="206" offset="-1" />
+    <kerning c1="220" c2="209" offset="-1" />
+    <kerning c1="220" c2="210" offset="-6" />
+    <kerning c1="220" c2="213" offset="-3" />
+    <kerning c1="220" c2="215" offset="-5" />
+    <kerning c1="220" c2="221" offset="-1" />
+    <kerning c1="220" c2="223" offset="-3" />
+    <kerning c1="221" c2="196" offset="-2" />
+    <kerning c1="221" c2="198" offset="-1" />
+    <kerning c1="221" c2="199" offset="-1" />
+    <kerning c1="221" c2="203" offset="-2" />
+    <kerning c1="221" c2="213" offset="-2" />
+    <kerning c1="221" c2="223" offset="-1" />
+    <kerning c1="221" c2="228" offset="-2" />
+    <kerning c1="221" c2="230" offset="1" />
+    <kerning c1="221" c2="235" offset="-2" />
+    <kerning c1="221" c2="236" offset="-1" />
+    <kerning c1="221" c2="255" offset="-1" />
+    <kerning c1="222" c2="192" offset="-2" />
+    <kerning c1="222" c2="196" offset="-3" />
+    <kerning c1="222" c2="198" offset="-1" />
+    <kerning c1="222" c2="203" offset="-3" />
+    <kerning c1="222" c2="206" offset="-1" />
+    <kerning c1="222" c2="209" offset="-1" />
+    <kerning c1="222" c2="210" offset="-3" />
+    <kerning c1="222" c2="213" offset="-3" />
+    <kerning c1="222" c2="215" offset="-2" />
+    <kerning c1="222" c2="228" offset="-3" />
+    <kerning c1="222" c2="235" offset="-3" />
+    <kerning c1="222" c2="236" offset="-1" />
+    <kerning c1="224" c2="231" offset="-1" />
+    <kerning c1="224" c2="242" offset="-1" />
+    <kerning c1="224" c2="243" offset="-1" />
+    <kerning c1="224" c2="247" offset="-1" />
+    <kerning c1="225" c2="224" offset="-1" />
+    <kerning c1="225" c2="228" offset="-3" />
+    <kerning c1="225" c2="229" offset="-1" />
+    <kerning c1="225" c2="230" offset="-1" />
+    <kerning c1="225" c2="231" offset="-1" />
+    <kerning c1="225" c2="235" offset="-3" />
+    <kerning c1="225" c2="236" offset="-1" />
+    <kerning c1="225" c2="241" offset="-1" />
+    <kerning c1="225" c2="243" offset="-1" />
+    <kerning c1="225" c2="244" offset="-1" />
+    <kerning c1="225" c2="245" offset="-2" />
+    <kerning c1="225" c2="247" offset="-2" />
+    <kerning c1="225" c2="250" offset="-2" />
+    <kerning c1="225" c2="253" offset="-1" />
+    <kerning c1="225" c2="255" offset="-1" />
+    <kerning c1="226" c2="224" offset="-1" />
+    <kerning c1="226" c2="225" offset="-1" />
+    <kerning c1="226" c2="228" offset="-1" />
+    <kerning c1="226" c2="229" offset="-1" />
+    <kerning c1="226" c2="230" offset="-1" />
+    <kerning c1="226" c2="231" offset="-1" />
+    <kerning c1="226" c2="235" offset="-1" />
+    <kerning c1="226" c2="236" offset="-1" />
+    <kerning c1="226" c2="238" offset="-1" />
+    <kerning c1="226" c2="241" offset="-1" />
+    <kerning c1="226" c2="242" offset="-1" />
+    <kerning c1="226" c2="243" offset="-1" />
+    <kerning c1="226" c2="244" offset="-1" />
+    <kerning c1="226" c2="247" offset="-3" />
+    <kerning c1="226" c2="250" offset="-2" />
+    <kerning c1="226" c2="255" offset="-1" />
+    <kerning c1="227" c2="44" offset="-7" />
+    <kerning c1="227" c2="46" offset="-7" />
+    <kerning c1="227" c2="224" offset="-1" />
+    <kerning c1="227" c2="228" offset="-3" />
+    <kerning c1="227" c2="229" offset="-1" />
+    <kerning c1="227" c2="231" offset="-1" />
+    <kerning c1="227" c2="235" offset="-1" />
+    <kerning c1="227" c2="238" offset="-1" />
+    <kerning c1="227" c2="241" offset="-1" />
+    <kerning c1="227" c2="255" offset="-1" />
+    <kerning c1="228" c2="250" offset="-1" />
+    <kerning c1="228" c2="253" offset="1" />
+    <kerning c1="229" c2="225" offset="-1" />
+    <kerning c1="229" c2="228" offset="-1" />
+    <kerning c1="229" c2="230" offset="-1" />
+    <kerning c1="229" c2="231" offset="-1" />
+    <kerning c1="229" c2="235" offset="-2" />
+    <kerning c1="229" c2="242" offset="-2" />
+    <kerning c1="229" c2="243" offset="-1" />
+    <kerning c1="229" c2="245" offset="-1" />
+    <kerning c1="229" c2="247" offset="-2" />
+    <kerning c1="230" c2="225" offset="1" />
+    <kerning c1="230" c2="243" offset="1" />
+    <kerning c1="230" c2="247" offset="-1" />
+    <kerning c1="230" c2="250" offset="1" />
+    <kerning c1="231" c2="225" offset="-1" />
+    <kerning c1="231" c2="228" offset="-1" />
+    <kerning c1="231" c2="229" offset="-1" />
+    <kerning c1="231" c2="231" offset="-1" />
+    <kerning c1="231" c2="235" offset="-1" />
+    <kerning c1="231" c2="238" offset="-1" />
+    <kerning c1="231" c2="241" offset="-1" />
+    <kerning c1="231" c2="243" offset="-1" />
+    <kerning c1="231" c2="244" offset="-1" />
+    <kerning c1="231" c2="247" offset="-2" />
+    <kerning c1="231" c2="250" offset="-1" />
+    <kerning c1="234" c2="224" offset="1" />
+    <kerning c1="234" c2="225" offset="1" />
+    <kerning c1="234" c2="229" offset="1" />
+    <kerning c1="234" c2="231" offset="1" />
+    <kerning c1="234" c2="235" offset="1" />
+    <kerning c1="234" c2="238" offset="1" />
+    <kerning c1="234" c2="241" offset="1" />
+    <kerning c1="234" c2="242" offset="1" />
+    <kerning c1="234" c2="243" offset="1" />
+    <kerning c1="234" c2="253" offset="1" />
+    <kerning c1="235" c2="238" offset="1" />
+    <kerning c1="235" c2="247" offset="-1" />
+    <kerning c1="236" c2="225" offset="-1" />
+    <kerning c1="236" c2="231" offset="-1" />
+    <kerning c1="236" c2="243" offset="1" />
+    <kerning c1="238" c2="228" offset="-1" />
+    <kerning c1="238" c2="230" offset="-1" />
+    <kerning c1="238" c2="231" offset="-1" />
+    <kerning c1="238" c2="235" offset="-1" />
+    <kerning c1="238" c2="242" offset="-1" />
+    <kerning c1="238" c2="243" offset="-1" />
+    <kerning c1="238" c2="245" offset="-1" />
+    <kerning c1="238" c2="247" offset="-1" />
+    <kerning c1="240" c2="228" offset="-1" />
+    <kerning c1="240" c2="231" offset="-1" />
+    <kerning c1="240" c2="235" offset="-2" />
+    <kerning c1="240" c2="242" offset="-1" />
+    <kerning c1="240" c2="243" offset="-1" />
+    <kerning c1="240" c2="245" offset="-1" />
+    <kerning c1="240" c2="247" offset="-1" />
+    <kerning c1="240" c2="255" offset="-1" />
+    <kerning c1="241" c2="230" offset="1" />
+    <kerning c1="241" c2="238" offset="1" />
+    <kerning c1="241" c2="247" offset="-1" />
+    <kerning c1="241" c2="253" offset="1" />
+    <kerning c1="242" c2="44" offset="-7" />
+    <kerning c1="242" c2="46" offset="-7" />
+    <kerning c1="242" c2="224" offset="-1" />
+    <kerning c1="242" c2="228" offset="-2" />
+    <kerning c1="242" c2="229" offset="-1" />
+    <kerning c1="242" c2="230" offset="2" />
+    <kerning c1="242" c2="235" offset="-1" />
+    <kerning c1="242" c2="238" offset="-1" />
+    <kerning c1="242" c2="241" offset="-1" />
+    <kerning c1="242" c2="243" offset="1" />
+    <kerning c1="243" c2="44" offset="-6" />
+    <kerning c1="243" c2="46" offset="-6" />
+    <kerning c1="243" c2="187" offset="1" />
+    <kerning c1="243" c2="224" offset="-1" />
+    <kerning c1="243" c2="225" offset="1" />
+    <kerning c1="243" c2="228" offset="-2" />
+    <kerning c1="243" c2="229" offset="-1" />
+    <kerning c1="243" c2="230" offset="1" />
+    <kerning c1="243" c2="235" offset="-1" />
+    <kerning c1="243" c2="236" offset="-1" />
+    <kerning c1="243" c2="238" offset="-1" />
+    <kerning c1="243" c2="240" offset="-1" />
+    <kerning c1="243" c2="241" offset="-1" />
+    <kerning c1="243" c2="244" offset="-1" />
+    <kerning c1="243" c2="253" offset="-1" />
+    <kerning c1="243" c2="255" offset="-1" />
+    <kerning c1="244" c2="225" offset="-1" />
+    <kerning c1="244" c2="228" offset="-1" />
+    <kerning c1="244" c2="235" offset="-1" />
+    <kerning c1="244" c2="242" offset="-1" />
+    <kerning c1="244" c2="243" offset="-1" />
+    <kerning c1="244" c2="247" offset="-1" />
+    <kerning c1="244" c2="255" offset="-1" />
+    <kerning c1="245" c2="224" offset="-1" />
+    <kerning c1="245" c2="225" offset="-1" />
+    <kerning c1="245" c2="229" offset="-1" />
+    <kerning c1="245" c2="231" offset="-1" />
+    <kerning c1="245" c2="238" offset="-1" />
+    <kerning c1="245" c2="241" offset="-1" />
+    <kerning c1="245" c2="242" offset="-1" />
+    <kerning c1="245" c2="244" offset="-1" />
+    <kerning c1="245" c2="247" offset="-1" />
+    <kerning c1="246" c2="229" offset="-1" />
+    <kerning c1="246" c2="231" offset="-1" />
+    <kerning c1="246" c2="238" offset="-1" />
+    <kerning c1="246" c2="241" offset="-1" />
+    <kerning c1="249" c2="229" offset="-1" />
+    <kerning c1="249" c2="238" offset="-1" />
+    <kerning c1="249" c2="243" offset="1" />
+    <kerning c1="252" c2="242" offset="-5" />
+    <kerning c1="252" c2="247" offset="-4" />
+    <kerning c1="253" c2="228" offset="-1" />
+    <kerning c1="253" c2="229" offset="1" />
+    <kerning c1="253" c2="231" offset="-1" />
+    <kerning c1="253" c2="235" offset="-1" />
+    <kerning c1="253" c2="238" offset="1" />
+    <kerning c1="253" c2="242" offset="-1" />
+    <kerning c1="253" c2="245" offset="-1" />
+    <kerning c1="253" c2="255" offset="-1" />
+    <kerning c1="254" c2="228" offset="-1" />
+    <kerning c1="254" c2="230" offset="-1" />
+    <kerning c1="254" c2="235" offset="-1" />
+    <kerning c1="254" c2="236" offset="-1" />
+    <kerning c1="254" c2="242" offset="-1" />
+    <kerning c1="254" c2="245" offset="-1" />
+    <kerning c1="254" c2="247" offset="-1" />
+</font>
