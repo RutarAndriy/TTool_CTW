@@ -1,6 +1,7 @@
 package com.rutar.ttool_ctw;
 
 import java.io.*;
+import java.awt.*;
 import javax.swing.*;
 import java.nio.charset.*;
 import javax.swing.filechooser.*;
@@ -68,6 +69,22 @@ public static char fromStringToChar (String s) {
     
     if (s.length() == 1) { return s.charAt(0); }
     else { return fromCodeToCP1251Char(Integer.parseInt(s)); }  
+}
+
+// ============================================================================
+/// Виділення клітинок у таблиці
+/// @param table таблиця, клітинки якої потрібно виділяти
+/// @param col номер стовбця клітинки, яку потрібно виділити
+/// @param row номер рядка клітинки, яку потрібно виділити
+
+public static void selectCell (JTable table, int col, int row) {
+
+    table.setRowSelectionInterval   (row, row);
+    table.setColumnSelectionInterval(col, col);
+
+    Rectangle rect = table.getCellRect(row, col, true);
+    table.scrollRectToVisible(rect);
+
 }
 
 // ============================================================================
