@@ -20,10 +20,8 @@ public class Utils {
 /// @param c символ
 /// @return код символу в кодуванні cp1251
 
-public static int fromCP1251CharToCode (char c) {
-    
-    return String.valueOf(c).getBytes(Charset.forName("cp1251"))[0] & 0xFF;
-}
+public static int fromCP1251CharToCode (char c)
+  { return String.valueOf(c).getBytes(Charset.forName("cp1251"))[0] & 0xFF; }
 
 // ============================================================================
 /// Отримання символу за його кодом в кодуванні cp1251
@@ -51,11 +49,8 @@ public static String fromCharToString (char c) {
         result.equals(":")  || result.equals("*")  ||
         result.equals("?")  || result.equals("\"") ||
         result.equals("<")  || result.equals(">")  ||
-        result.equals("|")  || result.equals("_")) {
-        
-        result = Integer.toString(Utils.fromCP1251CharToCode(c));
-    
-    }
+        result.equals("|")  || result.equals("_"))
+      { result = Integer.toString(Utils.fromCP1251CharToCode(c)); }
     
     return result;
 }
@@ -84,7 +79,6 @@ public static void selectCell (JTable table, int col, int row) {
 
     Rectangle rect = table.getCellRect(row, col, true);
     table.scrollRectToVisible(rect);
-
 }
 
 // ============================================================================
@@ -107,7 +101,6 @@ public static JFileChooser getFileChooser (String ext, int selectionMode,
     chooser.setCurrentDirectory(HOME_DIR);
     
     return chooser;
-
 }
 
 // ============================================================================
@@ -121,14 +114,13 @@ public static File getLastDir (JFileChooser chooser) {
     
     // Якщо останього файлу немає - повертаємо null
     if (file == null)
-        { return null; }
+      { return null; }
     // Якщо останній файл є папкою - повертаємо батьківську папку
     else if (file.isDirectory())
-        { return new File(file.getParent()); }
+      { return new File(file.getParent()); }
     // Якщо останній файл є файлом - повертаємо шлях до його папки
     else
-        { return new File(file.getPath().replace(file.getName(), "")); }
-
+      { return new File(file.getPath().replace(file.getName(), "")); }
 }
 
 // ============================================================================
@@ -136,12 +128,10 @@ public static File getLastDir (JFileChooser chooser) {
 /// @param value текст із невикористовуваними символами
 /// @return текст із заміненими символами
 
-public static String replaceUnusedChars (String value) {
-    
-    return value.replace('’', '\'')
+public static String replaceUnusedChars (String value)
+  { return value.replace('’', '\'')
                 .replace('Ґ', 'Г')
-                .replace('ґ', 'г');
-}
+                .replace('ґ', 'г'); }
 
 // Кінець класу Utils =========================================================
 

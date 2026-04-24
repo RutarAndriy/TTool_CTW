@@ -57,35 +57,36 @@ List<String> inDesc = Files.readAllLines(inputFile.toPath(), UTF_8);
 
 for (String line : inDesc) {
     
-    // Якщо це не тег-char, то додаємо його у файл-деркриптор
-    if (!line.trim().startsWith("<char")) { outDesc.add(line); }
-    
-    // Інакше обробляємо тег
-    else {
-        
-        // Парсимо тег, щоб витягти з нього атрибути
-        Element el = Jsoup.parse(line).getElementsByTag("char").first();
-        
-        // Створюємо екземпляр класу Symbol
-        symbol = new Symbol(symbols.size() + 1,
-                            el.attr("c"),  el.attr("code"),
-                            el.attr("x"),  el.attr("y"),
-                            el.attr("w"),  el.attr("h"),
-                            el.attr("dx"), el.attr("dy"), el.attr("advx"));
-        
-        // Отримуємо окремий символ - вирізаємо частинку із заг. зображення
-        imgSymbol = imFont.getSubimage(Integer.parseInt(symbol.getX()),
-                                       Integer.parseInt(symbol.getY()),
-                                       Integer.parseInt(symbol.getW()),
-                                       Integer.parseInt(symbol.getH()));
-    
-        // Стаорюємо новий файл для збереження окремого символу
-        imgFile = new File(outputDir.getPath() + separator
-                         + symbol.getImageName() + ".png");
- 
-        // Зберігаємо символ як зображення і додаємо його в масив символів
-        ImageIO.write(imgSymbol, "png", imgFile);
-        symbols.add(symbol); } }
+  // Якщо це не тег-char, то додаємо його у файл-деркриптор
+  if (!line.trim().startsWith("<char")) { outDesc.add(line); }
+
+  // Інакше обробляємо тег
+  else {
+
+    // Парсимо тег, щоб витягти з нього атрибути
+    Element el = Jsoup.parse(line).getElementsByTag("char").first();
+
+    // Створюємо екземпляр класу Symbol
+    symbol = new Symbol(symbols.size() + 1,
+                        el.attr("c"),  el.attr("code"),
+                        el.attr("x"),  el.attr("y"),
+                        el.attr("w"),  el.attr("h"),
+                        el.attr("dx"), el.attr("dy"), el.attr("advx"));
+
+    // Отримуємо окремий символ - вирізаємо частинку із заг. зображення
+    imgSymbol = imFont.getSubimage(Integer.parseInt(symbol.getX()),
+                                   Integer.parseInt(symbol.getY()),
+                                   Integer.parseInt(symbol.getW()),
+                                   Integer.parseInt(symbol.getH()));
+
+    // Стаорюємо новий файл для збереження окремого символу
+    imgFile = new File(outputDir.getPath() + separator
+                     + symbol.getImageName() + ".png");
+
+    // Зберігаємо символ як зображення і додаємо його в масив символів
+    ImageIO.write(imgSymbol, "png", imgFile);
+    symbols.add(symbol); }
+}
 
 // ............................................................................
 
@@ -96,7 +97,7 @@ return 0;
 
 }
 
-catch (Exception _) { return -1; }
+catch (IOException | NumberFormatException _) { return -1; }
 
 }
 
@@ -128,10 +129,10 @@ ArrayList<String> outDesc = new ArrayList<>();
 
 // Витягуємо ширину і висоту зображення з тегу <font>
 for (String param : inDesc.get(1).split("\" ")) {
-    if (param.startsWith("imgWidth"))
-        { fontImgW = Integer.parseInt(param.split("=\"")[1]); }
-    if (param.startsWith("imgHeight"))
-        { fontImgH = Integer.parseInt(param.split("=\"")[1]); } }
+  if (param.startsWith("imgWidth"))
+    { fontImgW = Integer.parseInt(param.split("=\"")[1]); }
+  if (param.startsWith("imgHeight"))
+    { fontImgH = Integer.parseInt(param.split("=\"")[1]); } }
 
 // ............................................................................
 
@@ -146,48 +147,48 @@ g = imgFont.getGraphics();
 
 for (int z = 1; z < allFiles.length; z++) {
     
-    name = null;
-    number = String.format("%03d", z);
-    
-    for (String currentFile : allFiles) {
-        if (currentFile.startsWith(number))
-            { name = currentFile;
-              break; } }
-    
-    symb = new Symbol(name);
-    
-    // Заміна особливих символів
-    switch (symb.getChar())
-        { case "\"" -> charSymb = "&quot;";
-          case "&"  -> charSymb = "&amp;";
-          case "'"  -> charSymb = "&apos;";
-          case "<"  -> charSymb = "&lt;";
-          case ">"  -> charSymb = "&gt;";
-          default   -> charSymb = symb.getChar(); }
-    
-    charLine = String.format(charPattern,  symb.getCode(),
-                             symb.getX(),  symb.getY(), 
-                             symb.getW(),  symb.getH(),
-                             symb.getDx(), symb.getDy(),
-                             symb.getAdvx());
-    
-    if (!symb.getChar().isEmpty())
-        { charLine = "c=\"" + charSymb + "\" " + charLine; }
-    
-    charLine = String.format("    <char %s />", charLine);
-    outDesc.add(charLine);
-    
-    // Малювання конкретного символу на загальному зображенні
-    imgSymb = ImageIO.read(new File(inputFile.getPath() + separator + name));
-    g.drawImage(imgSymb, Integer.parseInt(symb.getX()),
-                         Integer.parseInt(symb.getY()), null);
+  name = null;
+  number = String.format("%03d", z);
+
+  for (String currentFile : allFiles) {
+    if (currentFile.startsWith(number))
+      { name = currentFile;
+        break; } }
+
+  symb = new Symbol(name);
+
+  // Заміна особливих символів
+  switch (symb.getChar())
+    { case "\"" -> charSymb = "&quot;";
+      case "&"  -> charSymb = "&amp;";
+      case "'"  -> charSymb = "&apos;";
+      case "<"  -> charSymb = "&lt;";
+      case ">"  -> charSymb = "&gt;";
+      default   -> charSymb = symb.getChar(); }
+
+  charLine = String.format(charPattern,  symb.getCode(),
+                           symb.getX(),  symb.getY(), 
+                           symb.getW(),  symb.getH(),
+                           symb.getDx(), symb.getDy(),
+                           symb.getAdvx());
+
+  if (!symb.getChar().isEmpty())
+    { charLine = "c=\"" + charSymb + "\" " + charLine; }
+
+  charLine = String.format("    <char %s />", charLine);
+  outDesc.add(charLine);
+
+  // Малювання конкретного символу на загальному зображенні
+  imgSymb = ImageIO.read(new File(inputFile.getPath() + separator + name));
+  g.drawImage(imgSymb, Integer.parseInt(symb.getX()),
+                       Integer.parseInt(symb.getY()), null);
 }
 
 // ............................................................................
 // Запис необроблених параметрів у *.fnt файл
 
 for (int z = 2; z < inDesc.size(); z++)
-    { outDesc.add(inDesc.get(z)); }
+  { outDesc.add(inDesc.get(z)); }
 
 // Запис зображення та опису шрифту
 ImageIO.write(imgFont, "png", imgFile);
@@ -197,7 +198,7 @@ return 0;
     
 }
 
-catch (Exception _) { return -1; }
+catch (IOException | NumberFormatException _) { return -1; }
 
 }
 

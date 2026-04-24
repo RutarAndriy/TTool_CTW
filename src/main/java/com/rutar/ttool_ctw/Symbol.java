@@ -36,9 +36,9 @@ sDy   = params[8].split("dy")  [1];
 sAdvx = params[9].split("advx")[1].split("\\.")[0];
 
 if (params[1].equals("char"))
-    { sChar = ""; }
+  { sChar = ""; }
 else
-    { sChar = "" + Utils.fromStringToChar(params[1].split("char")[1]); }
+  { sChar = "" + Utils.fromStringToChar(params[1].split("char")[1]); }
 
 }
 
@@ -57,7 +57,6 @@ public Symbol (int id, String symb, String sCode, String sX, String sY,
     this.sDx = sDx;
     this.sDy = sDy;
     this.sAdvx = sAdvx;
-
 }
 
 // ============================================================================
@@ -95,19 +94,17 @@ public void setAdvx (String sAdvx) { this.sAdvx = sAdvx; }
 // ============================================================================
 
 @Override
-public String toString() {
-    return "Symbol { id=" + id + ", char=" + sChar + ", code=" + sCode
+public String toString()
+  { return "Symbol { id=" + id + ", char=" + sChar + ", code=" + sCode
          + ", x=" + sX + ", y=" + sY + ", w=" + sW + ", h=" + sH
-         + ", dx=" + sDx + ", dy=" + sDy + ", advx=" + sAdvx + " }";
-}
+         + ", dx=" + sDx + ", dy=" + sDy + ", advx=" + sAdvx + " }"; }
 
 // ============================================================================
 
-public String getImageName() {
-    return String.format("%03d_" + "char%s_" + "code%s_" + "x%s_" + "y%s_" +
+public String getImageName()
+  { return String.format("%03d_" + "char%s_" + "code%s_" + "x%s_" + "y%s_" +
                          "w%s_" + "h%s_" + "dx%s_" + "dy%s_" + "advx%s",
-                          id, sChar, sCode, sX, sY, sW, sH, sDx, sDy, sAdvx);
-}
+                          id, sChar, sCode, sX, sY, sW, sH, sDx, sDy, sAdvx); }
 
 // Кінець класу Symbol ========================================================
 
